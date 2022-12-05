@@ -37,7 +37,7 @@ const Home = ({ page }: IndexProps) => {
   };
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
+    <div className="relative">
       <Head>
         <title>{data.name}</title>
       </Head>

@@ -2,7 +2,6 @@ import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
 
 import { Button } from "@/components/Button";
 import data from "@/data/portfolio.json";
@@ -14,13 +13,8 @@ type HeaderProps = {
 
 export const Header = ({ handleWorkScroll, handleAboutScroll }: HeaderProps) => {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
   const { name } = data;
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <>
@@ -29,7 +23,10 @@ export const Header = ({ handleWorkScroll, handleAboutScroll }: HeaderProps) => 
           <>
             <div className="flex items-center justify-between p-2 laptop:p-0">
               <Link href="/">
-                <h1 className="font-medium p-2 laptop:p-0 link">{name}.</h1>
+                <div className="flex items-center gap-0.5">
+                  <Image src="/logo.svg" width={36} height={36} />
+                  <h1 className="font-medium p-2 laptop:p-0 link">{name}.</h1>
+                </div>
               </Link>
 
               <div className="flex items-center">
@@ -82,14 +79,17 @@ export const Header = ({ handleWorkScroll, handleAboutScroll }: HeaderProps) => 
         } dark:text-white top-0 z-10 tablet:flex`}
       >
         <Link href="/">
-          <h1 className="font-medium cursor-pointer mob:p-2 laptop:p-0">{name}.</h1>
+          <div className="flex items-center gap-4">
+            <Image src="/logo.svg" width={64} height={64} />
+            <h1 className="font-medium text-2xl cursor-pointer mob:p-2 laptop:p-0">{name}.</h1>
+          </div>
         </Link>
         <div className="flex">
           <Button onClick={handleWorkScroll}>Work</Button>
           <Button onClick={handleAboutScroll}>About</Button>
 
           <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>Contact</Button>
-          {mounted && theme && data.darkMode && (
+          {theme && data.darkMode && (
             <Button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               classes="relative"
