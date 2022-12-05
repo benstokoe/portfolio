@@ -1,0 +1,51 @@
+{
+  "_cts": {
+    "page": {},
+    "project": {},
+    "technology": {},
+    "service": {}
+  },
+  "slices": {
+    "HomeHero": {
+      "default": {
+        "primary": {
+          "taglineOne": {
+            "content": "Hello"
+          },
+          "taglineTwo": {
+            "content": "I'm Ben Stokoe - senior"
+          },
+          "taglineThree": {
+            "content": "front end developer"
+          },
+          "taglineFour": {
+            "content": "based in London, England."
+          }
+        }
+      }
+    },
+    "Socials": {},
+    "SocialItem": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Projects": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "Services": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "About": {
+      "default": {
+        "primary": {}
+      }
+    }
+  }
+}
