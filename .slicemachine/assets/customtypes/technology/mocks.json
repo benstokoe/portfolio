@@ -11,15 +11,6 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "name": "universe",
-    "logo": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
-      },
-      "alt": null,
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
-    }
+    "name": "western"
   }
 }

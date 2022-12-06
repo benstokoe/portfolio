@@ -71,17 +71,55 @@ interface ProjectDocumentData {
      */
     mainImage: prismicT.ImageField<never>;
     /**
+     * Role field in *Project*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.role
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    role: prismicT.KeyTextField;
+    /**
      * Technologies field in *Project*
      *
-     * - **Field Type**: Content Relationship
+     * - **Field Type**: Text
      * - **Placeholder**: *None*
      * - **API ID Path**: project.technologies
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
      *
      */
-    technologies: prismicT.RelationField<"technology">;
+    technologies: prismicT.KeyTextField;
+    /**
+     * Company Description field in *Project*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.companyDescription
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    companyDescription: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *Project*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ProjectDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Project → Slice Zone*
+ *
+ */
+type ProjectDocumentDataSlicesSlice = ProjectSolutionSlice | ProjectImagesSlice | ProjectChallengeSlice;
 /**
  * Project document from Prismic
  *
@@ -117,17 +155,6 @@ interface TechnologyDocumentData {
      *
      */
     name: prismicT.KeyTextField;
-    /**
-     * Logo field in *Technology*
-     *
-     * - **Field Type**: Image
-     * - **Placeholder**: *None*
-     * - **API ID Path**: technology.logo
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
-     *
-     */
-    logo: prismicT.ImageField<never>;
 }
 /**
  * Technology document from Prismic
@@ -259,6 +286,84 @@ type HomeHeroSliceVariation = HomeHeroSliceDefault;
  */
 export type HomeHeroSlice = prismicT.SharedSlice<"home_hero", HomeHeroSliceVariation>;
 /**
+ * Primary content in ProjectChallenge → Primary
+ *
+ */
+interface ProjectChallengeSliceDefaultPrimary {
+    /**
+     * Challenge field in *ProjectChallenge → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project_challenge.primary.challenge
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    challenge: prismicT.RichTextField;
+}
+/**
+ * Default variation for ProjectChallenge Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ProjectChallenge`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectChallengeSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ProjectChallengeSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *ProjectChallenge*
+ *
+ */
+type ProjectChallengeSliceVariation = ProjectChallengeSliceDefault;
+/**
+ * ProjectChallenge Shared Slice
+ *
+ * - **API ID**: `project_challenge`
+ * - **Description**: `ProjectChallenge`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectChallengeSlice = prismicT.SharedSlice<"project_challenge", ProjectChallengeSliceVariation>;
+/**
+ * Item in ProjectImages → Items
+ *
+ */
+export interface ProjectImagesSliceDefaultItem {
+    /**
+     * Image field in *ProjectImages → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project_images.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for ProjectImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ProjectImages`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectImagesSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<ProjectImagesSliceDefaultItem>>;
+/**
+ * Slice variation for *ProjectImages*
+ *
+ */
+type ProjectImagesSliceVariation = ProjectImagesSliceDefault;
+/**
+ * ProjectImages Shared Slice
+ *
+ * - **API ID**: `project_images`
+ * - **Description**: `ProjectImages`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectImagesSlice = prismicT.SharedSlice<"project_images", ProjectImagesSliceVariation>;
+/**
  * Primary content in Projects → Primary
  *
  */
@@ -314,6 +419,45 @@ type ProjectsSliceVariation = ProjectsSliceDefault;
  */
 export type ProjectsSlice = prismicT.SharedSlice<"projects", ProjectsSliceVariation>;
 /**
+ * Primary content in ProjectSolution → Primary
+ *
+ */
+interface ProjectSolutionSliceDefaultPrimary {
+    /**
+     * Solution field in *ProjectSolution → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project_solution.primary.solution
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    solution: prismicT.RichTextField;
+}
+/**
+ * Default variation for ProjectSolution Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ProjectSolution`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectSolutionSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ProjectSolutionSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *ProjectSolution*
+ *
+ */
+type ProjectSolutionSliceVariation = ProjectSolutionSliceDefault;
+/**
+ * ProjectSolution Shared Slice
+ *
+ * - **API ID**: `project_solution`
+ * - **Description**: `ProjectSolution`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectSolutionSlice = prismicT.SharedSlice<"project_solution", ProjectSolutionSliceVariation>;
+/**
  * Primary content in Services → Primary
  *
  */
@@ -368,109 +512,11 @@ type ServicesSliceVariation = ServicesSliceDefault;
  *
  */
 export type ServicesSlice = prismicT.SharedSlice<"services", ServicesSliceVariation>;
-/**
- * Primary content in SocialItem → Primary
- *
- */
-interface SocialItemSliceDefaultPrimary {
-    /**
-     * Title field in *SocialItem → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: social_item.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    title: prismicT.KeyTextField;
-    /**
-     * Link field in *SocialItem → Primary*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: *None*
-     * - **API ID Path**: social_item.primary.link
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    link: prismicT.LinkField;
-}
-/**
- * Default variation for SocialItem Slice
- *
- * - **API ID**: `default`
- * - **Description**: `SocialItem`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type SocialItemSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SocialItemSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *SocialItem*
- *
- */
-type SocialItemSliceVariation = SocialItemSliceDefault;
-/**
- * SocialItem Shared Slice
- *
- * - **API ID**: `social_item`
- * - **Description**: `SocialItem`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type SocialItemSlice = prismicT.SharedSlice<"social_item", SocialItemSliceVariation>;
-/**
- * Primary content in Socials → Primary
- *
- */
-interface SocialsSliceDefaultPrimary {
-    /**
-     * Title field in *Socials → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: socials.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *Socials → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: socials.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-}
-/**
- * Default variation for Socials Slice
- *
- * - **API ID**: `default`
- * - **Description**: `Socials`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type SocialsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SocialsSliceDefaultPrimary>, never>;
-/**
- * Slice variation for *Socials*
- *
- */
-type SocialsSliceVariation = SocialsSliceDefault;
-/**
- * Socials Shared Slice
- *
- * - **API ID**: `socials`
- * - **Description**: `Socials`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type SocialsSlice = prismicT.SharedSlice<"socials", SocialsSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocument, ServiceDocumentData, ServiceDocument, TechnologyDocumentData, TechnologyDocument, AllDocumentTypes, AboutSliceDefaultPrimary, AboutSliceDefault, AboutSliceVariation, AboutSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, ProjectsSliceDefaultPrimary, ProjectsSliceDefaultItem, ProjectsSliceDefault, ProjectsSliceVariation, ProjectsSlice, ServicesSliceDefaultPrimary, ServicesSliceDefaultItem, ServicesSliceDefault, ServicesSliceVariation, ServicesSlice, SocialItemSliceDefaultPrimary, SocialItemSliceDefault, SocialItemSliceVariation, SocialItemSlice, SocialsSliceDefaultPrimary, SocialsSliceDefault, SocialsSliceVariation, SocialsSlice };
+        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, ServiceDocumentData, ServiceDocument, TechnologyDocumentData, TechnologyDocument, AllDocumentTypes, AboutSliceDefaultPrimary, AboutSliceDefault, AboutSliceVariation, AboutSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, ProjectChallengeSliceDefaultPrimary, ProjectChallengeSliceDefault, ProjectChallengeSliceVariation, ProjectChallengeSlice, ProjectImagesSliceDefaultItem, ProjectImagesSliceDefault, ProjectImagesSliceVariation, ProjectImagesSlice, ProjectsSliceDefaultPrimary, ProjectsSliceDefaultItem, ProjectsSliceDefault, ProjectsSliceVariation, ProjectsSlice, ProjectSolutionSliceDefaultPrimary, ProjectSolutionSliceDefault, ProjectSolutionSliceVariation, ProjectSolutionSlice, ServicesSliceDefaultPrimary, ServicesSliceDefaultItem, ServicesSliceDefault, ServicesSliceVariation, ServicesSlice };
     }
 }

@@ -1,8 +1,6 @@
 import { useTheme } from "next-themes";
 import React, { ReactNode } from "react";
 
-import data from "../../data/portfolio.json";
-
 type ButtonProps = {
   children: ReactNode;
   type?: "primary";

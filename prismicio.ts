@@ -1,7 +1,7 @@
 import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
 import { CreateClientConfig } from "@prismicio/next";
-import { FilledContentRelationshipField, PrismicDocument } from "@prismicio/types";
+import { FilledContentRelationshipField } from "@prismicio/types";
 
 import sm from "./sm.json";
 
@@ -10,6 +10,10 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 export const linkResolver = (doc: FilledContentRelationshipField) => {
   if (doc.url === "/home") {
     return "/";
+  }
+
+  if (doc.type === "project") {
+    return `/project/${doc.uid}`;
   }
 
   return "/";

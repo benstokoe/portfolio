@@ -46,6 +46,36 @@
       "default": {
         "primary": {}
       }
+    },
+    "ProjectImages": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "ProjectChallenge": {
+      "default": {
+        "primary": {
+          "challenge": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "ProjectSolution": {
+      "default": {
+        "primary": {
+          "solution": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   }
 }

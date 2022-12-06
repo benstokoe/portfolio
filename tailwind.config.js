@@ -4,7 +4,6 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
     "./slices/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class",
   theme: {
     screens: {
       mob: "375px",
@@ -13,7 +12,17 @@ module.exports = {
       desktop: "1280px",
       laptopl: "1440px",
     },
+    container: {
+      screens: {
+        xl: "1444px",
+      },
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        tablet: "2rem",
+      },
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
 };

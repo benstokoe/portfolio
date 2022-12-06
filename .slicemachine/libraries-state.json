@@ -118,6 +118,181 @@
         },
         "screenshotPaths": {}
       },
+      "project_challenge": {
+        "library": "slices",
+        "id": "project_challenge",
+        "name": "ProjectChallenge",
+        "description": "ProjectChallenge",
+        "model": {
+          "id": "project_challenge",
+          "type": "SharedSlice",
+          "name": "ProjectChallenge",
+          "description": "ProjectChallenge",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ProjectChallenge",
+              "primary": {
+                "challenge": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Challenge",
+                    "placeholder": "",
+                    "allowTargetBlank": false,
+                    "multi": "paragraph,strong"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "challenge": [
+                {
+                  "type": "paragraph",
+                  "text": "Do nulla minim occaecat qui laborum enim elit. In duis ad ex consectetur anim laborum nostrud magna ipsum occaecat adipisicing. Excepteur do do labore cillum ut do tempor ipsum.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "project_challenge"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "project_images": {
+        "library": "slices",
+        "id": "project_images",
+        "name": "ProjectImages",
+        "description": "ProjectImages",
+        "model": {
+          "id": "project_images",
+          "type": "SharedSlice",
+          "name": "ProjectImages",
+          "description": "ProjectImages",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ProjectImages",
+              "primary": {},
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
+                }
+              }
+            ],
+            "primary": {},
+            "slice_type": "project_images"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
+      "project_solution": {
+        "library": "slices",
+        "id": "project_solution",
+        "name": "ProjectSolution",
+        "description": "ProjectSolution",
+        "model": {
+          "id": "project_solution",
+          "type": "SharedSlice",
+          "name": "ProjectSolution",
+          "description": "ProjectSolution",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ProjectSolution",
+              "primary": {
+                "solution": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Solution",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,strong,em"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "solution": [
+                {
+                  "type": "paragraph",
+                  "text": "Anim consectetur eiusmod labore enim voluptate qui eu sunt eu esse voluptate enim esse eiusmod.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "project_solution"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "projects": {
         "library": "slices",
         "id": "projects",

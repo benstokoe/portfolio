@@ -14,47 +14,24 @@ type IndexProps = {
   page: PageDocument;
 };
 
-const Home = ({ page }: IndexProps) => {
-  // Ref
-  // const workRef = useRef(null);
-  // const aboutRef = useRef(null);
+const Home = ({ page }: IndexProps) => (
+  <div className="relative">
+    <Head>
+      <title>{data.name}</title>
+    </Head>
 
-  // Handling Scroll
-  const handleWorkScroll = () => {
-    // window.scrollTo({
-    //   top: workRef.current?.offsetTop,
-    //   left: 0,
-    //   behavior: "smooth",
-    // });
-  };
+    <div className="gradient-circle" />
+    <div className="gradient-circle-bottom" />
 
-  const handleAboutScroll = () => {
-    // window.scrollTo({
-    //   top: aboutRef.current?.offsetTop,
-    //   left: 0,
-    //   behavior: "smooth",
-    // });
-  };
+    <div className="container mx-auto mb-10">
+      <Header />
 
-  return (
-    <div className="relative">
-      <Head>
-        <title>{data.name}</title>
-      </Head>
+      <SliceZone slices={page.data.slices} components={components} />
 
-      <div className="gradient-circle" />
-      <div className="gradient-circle-bottom" />
-
-      <div className="container mx-auto mb-10">
-        <Header handleWorkScroll={handleWorkScroll} handleAboutScroll={handleAboutScroll} />
-
-        <SliceZone slices={page.data.slices} components={components} />
-
-        <Footer />
-      </div>
+      <Footer />
     </div>
-  );
-};
+  </div>
+);
 
 type GetStaticProps = {
   locale: string;
@@ -69,7 +46,7 @@ export const getStaticProps = async ({
 
   const page = await client.getByUID("page", "home", {
     lang: locale,
-    fetchLinks: ["project.name", "project.mainImage", "project.technology.name", "technology.logo"],
+    fetchLinks: ["project.name", "project.mainImage", "project.description"],
   });
 
   return {

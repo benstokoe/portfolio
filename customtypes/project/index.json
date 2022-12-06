@@ -34,14 +34,42 @@
           "thumbnails": []
         }
       },
+      "role": {
+        "type": "Text",
+        "config": {
+          "label": "Role",
+          "placeholder": ""
+        }
+      },
       "technologies": {
-        "type": "Link",
+        "type": "Text",
         "config": {
           "label": "Technologies",
-          "select": "document",
-          "customtypes": [
-            "technology"
-          ]
+          "placeholder": ""
+        }
+      },
+      "companyDescription": {
+        "type": "Text",
+        "config": {
+          "label": "Company Description",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "project_solution": {
+              "type": "SharedSlice"
+            },
+            "project_images": {
+              "type": "SharedSlice"
+            },
+            "project_challenge": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

@@ -11,8 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "name": "wife",
-    "description": "pig",
+    "name": "sink",
+    "description": "collect",
     "mainImage": {
       "dimensions": {
         "width": 900,
@@ -20,17 +20,11 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
     },
-    "technologies": {
-      "id": "mock_document_id",
-      "link_type": "Document",
-      "type": "technology",
-      "tags": [],
-      "lang": "en-us",
-      "slug": null,
-      "first_publication_date": "1970-01-01T00:00:01+0000",
-      "last_publication_date": "1970-01-01T01:00:00+0000"
-    }
+    "role": "slowly",
+    "technologies": "aid",
+    "companyDescription": "orbit",
+    "slices": []
   }
 }

@@ -4,7 +4,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { ServiceDocument, ServicesSlice } from "@/types.generated";
 
 const Services = ({ slice }: SliceComponentProps<ServicesSlice>) => (
-  <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
+  <div className="mt-10 laptop:mt-30">
     <h1 className="text-2xl text-bold">{slice.primary.title}.</h1>
 
     <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
