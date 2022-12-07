@@ -19,6 +19,14 @@
           "placeholder": ""
         }
       },
+      "url": {
+        "type": "Link",
+        "config": {
+          "label": "Url",
+          "placeholder": "",
+          "select": null
+        }
+      },
       "description": {
         "type": "Text",
         "config": {

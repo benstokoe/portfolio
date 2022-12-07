@@ -22,6 +22,8 @@ const Projects = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
               name={projectData.data.name as string}
               description={projectData.data.description as string}
             />
+
+            <p className="mt-4">View work</p>
           </PrismicLink>
         );
       })}

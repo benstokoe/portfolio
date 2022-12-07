@@ -4,7 +4,7 @@ import { ProjectChallengeSlice } from "@/types.generated";
 
 const ProjectChallenge = ({ slice }: SliceComponentProps<ProjectChallengeSlice>) => (
   <div className="mt-8">
-    <h2 className="text-4xl font-semibold">Challenge</h2>
+    <h2 className="text-4xl laptop:text-5xl font-semibold">Challenge</h2>
 
     <div className="mt-6">
       <PrismicRichText field={slice.primary.challenge} />

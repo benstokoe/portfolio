@@ -26,7 +26,7 @@ const Project = ({ project }: ProjectProps) => (
     <div className="container mx-auto mb-10">
       <Header />
 
-      <div className="mt-5 laptop:mt-40">
+      <div className="mt-10 laptop:mt-20">
         <div className="mb-5 grid tablet:grid-cols-2 gap-8">
           <h1 className="text-4xl tablet:text-6xl laptopl:text-8xl text-bold">
             {project.data.name}

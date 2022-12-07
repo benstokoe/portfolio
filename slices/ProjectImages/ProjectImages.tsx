@@ -4,15 +4,17 @@ import { SliceComponentProps } from "@prismicio/react";
 import { ProjectImagesSlice } from "@/types.generated";
 
 const ProjectImages = ({ slice }: SliceComponentProps<ProjectImagesSlice>) => (
-  <div className="mt-8 flex gap-4">
-    {slice.items.map(({ image }) => (
-      <div className="relative rounded-lg overflow-hidden transition-all ease-out duration-300">
-        <PrismicNextImage
-          field={image}
-          className="h-full w-full hover:scale-110 transition-all ease-out duration-300 rounded-lg"
-        />
-      </div>
-    ))}
+  <div className="mt-8">
+    {slice.primary.title && <h2 className="mb-4 text-3xl">{slice.primary.title}</h2>}
+
+    <div className="grid grid-cols-2 tablet:grid-cols-3 gap-4 relative">
+      {slice.items.map(({ image }) => (
+        <div className="relative rounded-lg overflow-hidden">
+          <PrismicNextImage field={image} className="w-full h-full rounded-lg" />
+          <p className="opacity-80">{image.alt}</p>
+        </div>
+      ))}
+    </div>
   </div>
 );
 

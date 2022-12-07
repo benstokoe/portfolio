@@ -49,6 +49,17 @@ interface ProjectDocumentData {
      */
     name: prismicT.KeyTextField;
     /**
+     * Url field in *Project*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.url
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    url: prismicT.LinkField;
+    /**
      * Description field in *Project*
      *
      * - **Field Type**: Text
@@ -131,7 +142,30 @@ type ProjectDocumentDataSlicesSlice = ProjectSolutionSlice | ProjectImagesSlice 
  */
 export type ProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectDocumentData>, "project", Lang>;
 /** Content for Service documents */
-type ServiceDocumentData = Record<string, never>;
+interface ServiceDocumentData {
+    /**
+     * Title field in *Service*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: service.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Description field in *Service*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: service.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    description: prismicT.KeyTextField;
+}
 /**
  * Service document from Prismic
  *
@@ -185,13 +219,13 @@ interface AboutSliceDefaultPrimary {
     /**
      * About field in *About → Primary*
      *
-     * - **Field Type**: Text
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
      * - **API ID Path**: about.primary.about
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    about: prismicT.KeyTextField;
+    about: prismicT.RichTextField;
 }
 /**
  * Default variation for About Slice
@@ -325,6 +359,22 @@ type ProjectChallengeSliceVariation = ProjectChallengeSliceDefault;
  */
 export type ProjectChallengeSlice = prismicT.SharedSlice<"project_challenge", ProjectChallengeSliceVariation>;
 /**
+ * Primary content in ProjectImages → Primary
+ *
+ */
+interface ProjectImagesSliceDefaultPrimary {
+    /**
+     * Title field in *ProjectImages → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project_images.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
  * Item in ProjectImages → Items
  *
  */
@@ -348,7 +398,7 @@ export interface ProjectImagesSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type ProjectImagesSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<ProjectImagesSliceDefaultItem>>;
+export type ProjectImagesSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ProjectImagesSliceDefaultPrimary>, Simplify<ProjectImagesSliceDefaultItem>>;
 /**
  * Slice variation for *ProjectImages*
  *
@@ -517,6 +567,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, ServiceDocumentData, ServiceDocument, TechnologyDocumentData, TechnologyDocument, AllDocumentTypes, AboutSliceDefaultPrimary, AboutSliceDefault, AboutSliceVariation, AboutSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, ProjectChallengeSliceDefaultPrimary, ProjectChallengeSliceDefault, ProjectChallengeSliceVariation, ProjectChallengeSlice, ProjectImagesSliceDefaultItem, ProjectImagesSliceDefault, ProjectImagesSliceVariation, ProjectImagesSlice, ProjectsSliceDefaultPrimary, ProjectsSliceDefaultItem, ProjectsSliceDefault, ProjectsSliceVariation, ProjectsSlice, ProjectSolutionSliceDefaultPrimary, ProjectSolutionSliceDefault, ProjectSolutionSliceVariation, ProjectSolutionSlice, ServicesSliceDefaultPrimary, ServicesSliceDefaultItem, ServicesSliceDefault, ServicesSliceVariation, ServicesSlice };
+        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, ServiceDocumentData, ServiceDocument, TechnologyDocumentData, TechnologyDocument, AllDocumentTypes, AboutSliceDefaultPrimary, AboutSliceDefault, AboutSliceVariation, AboutSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, ProjectChallengeSliceDefaultPrimary, ProjectChallengeSliceDefault, ProjectChallengeSliceVariation, ProjectChallengeSlice, ProjectImagesSliceDefaultPrimary, ProjectImagesSliceDefaultItem, ProjectImagesSliceDefault, ProjectImagesSliceVariation, ProjectImagesSlice, ProjectsSliceDefaultPrimary, ProjectsSliceDefaultItem, ProjectsSliceDefault, ProjectsSliceVariation, ProjectsSlice, ProjectSolutionSliceDefaultPrimary, ProjectSolutionSliceDefault, ProjectSolutionSliceVariation, ProjectSolutionSlice, ServicesSliceDefaultPrimary, ServicesSliceDefaultItem, ServicesSliceDefault, ServicesSliceVariation, ServicesSlice };
     }
 }

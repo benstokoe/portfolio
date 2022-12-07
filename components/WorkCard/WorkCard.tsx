@@ -12,11 +12,11 @@ type WorkCardProps = {
 export const WorkCard = ({ image, name, description }: WorkCardProps) => (
   <div className="overflow-hidden rounded-lg link">
     {isFilled.image(image) && (
-      <div className="relative rounded-lg overflow-hidden transition-all ease-out duration-300">
+      <div className="relative rounded-lg overflow-hidden">
         <PrismicNextImage
           field={image}
           layout="responsive"
-          className="h-full w-full hover:scale-110 transition-all ease-out duration-300"
+          className="h-full w-full tablet:hover:scale-110 transition-all ease-out duration-300"
         />
       </div>
     )}
