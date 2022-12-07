@@ -19,15 +19,19 @@ export const Header = () => {
             <div className="flex items-center justify-between">
               <Link href="/">
                 <div className="flex items-center gap-0.5">
-                  <Image src="/logo.svg" width={36} height={36} />
+                  <Image src="/logo.svg" alt="BS logo" width={36} height={36} />
                   <h1 className="font-medium p-2 laptop:p-0 link">{name}.</h1>
                 </div>
               </Link>
 
               <div className="flex items-center">
                 <Popover.Button>
-                  {!open && <Image height={24} width={24} src="/images/menu-white.svg" />}
-                  {open && <Image height={24} width={24} src="/images/cancel-white.svg" />}
+                  {!open && (
+                    <Image height={24} width={24} alt="Menu" src="/images/menu-white.svg" />
+                  )}
+                  {open && (
+                    <Image height={24} width={24} alt="Cancel" src="/images/cancel-white.svg" />
+                  )}
                 </Popover.Button>
               </div>
             </div>
@@ -45,7 +49,7 @@ export const Header = () => {
       <div className="mt-10 hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-slate-900">
         <Link href="/">
           <div className="flex items-center gap-4">
-            <Image src="/logo.svg" width={64} height={64} />
+            <Image src="/logo.svg" alt="BS logo" width={64} height={64} />
             <h1 className="font-medium text-2xl cursor-pointer mob:p-2 laptop:p-0">{name}.</h1>
           </div>
         </Link>
