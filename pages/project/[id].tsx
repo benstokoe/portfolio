@@ -57,7 +57,7 @@ const Project = ({ project }: ProjectProps) => (
             <PrismicNextImage
               field={project.data.mainImage}
               layout="responsive"
-              className="h-full w-full hover:scale-110 transition-all ease-out duration-300"
+              className="h-full w-full"
             />
           </div>
         )}
@@ -66,6 +66,10 @@ const Project = ({ project }: ProjectProps) => (
           <p>{project.data.companyDescription}</p>
         </div>
       </div>
+
+      {Boolean(project.data.slices.length) && (
+        <div className="border-b border-white w-full h-0.5 mt-8" />
+      )}
 
       <SliceZone slices={project.data.slices} components={components} />
 
