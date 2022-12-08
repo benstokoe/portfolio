@@ -1,36 +1,19 @@
 import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsResult, PreviewData } from "next";
-import Head from "next/head";
 import { PageDocument } from "types.generated";
 
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import Layout from "@/components/Layout/Layout";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-
-import data from "../data/portfolio.json";
 
 type IndexProps = {
   page: PageDocument;
 };
 
 const Home = ({ page }: IndexProps) => (
-  <div className="relative">
-    <Head>
-      <title>{data.name}</title>
-    </Head>
-
-    <div className="gradient-circle" />
-    <div className="gradient-circle-bottom" />
-
-    <div className="container mx-auto mb-10">
-      <Header />
-
-      <SliceZone slices={page.data.slices} components={components} />
-
-      <Footer />
-    </div>
-  </div>
+  <Layout>
+    <SliceZone slices={page.data.slices} components={components} />
+  </Layout>
 );
 
 type GetStaticProps = {

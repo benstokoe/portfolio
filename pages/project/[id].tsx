@@ -5,8 +5,8 @@ import { GetStaticPropsResult, PreviewData } from "next";
 import Head from "next/head";
 import { ProjectDocument } from "types.generated";
 
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import Layout from "@/components/Layout/Layout";
+import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
@@ -15,67 +15,58 @@ type ProjectProps = {
 };
 
 const Project = ({ project }: ProjectProps) => (
-  <div className="relative">
+  <Layout>
     <Head>
-      <title>{project.data.name}</title>
+      <title>
+        {data.name} - {project.data.name}
+      </title>
     </Head>
 
-    <div className="gradient-circle" />
-    <div className="gradient-circle-bottom" />
+    <div className="mt-10 laptop:mt-20">
+      <div className="mb-5 grid tablet:grid-cols-2 gap-8">
+        <h1 className="text-4xl tablet:text-6xl laptopl:text-8xl text-bold">{project.data.name}</h1>
 
-    <div className="container mx-auto mb-10">
-      <Header />
+        <div className="flex flex-col gap-4">
+          <div>
+            <h2 className="opacity-50 mb-2">DESCRIPTION</h2>
+            <p>{project.data.description}</p>
+          </div>
 
-      <div className="mt-10 laptop:mt-20">
-        <div className="mb-5 grid tablet:grid-cols-2 gap-8">
-          <h1 className="text-4xl tablet:text-6xl laptopl:text-8xl text-bold">
-            {project.data.name}
-          </h1>
-
-          <div className="flex flex-col gap-4">
+          <div className="gap-4 grid tablet:grid-cols-2">
             <div>
-              <h2 className="opacity-50 mb-2">DESCRIPTION</h2>
-              <p>{project.data.description}</p>
+              <h2 className="opacity-50 mb-2">ROLE</h2>
+              <p>{project.data.role}</p>
             </div>
 
-            <div className="gap-4 grid tablet:grid-cols-2">
-              <div>
-                <h2 className="opacity-50 mb-2">ROLE</h2>
-                <p>{project.data.role}</p>
-              </div>
-
-              <div>
-                <h2 className="opacity-50 mb-2">TECHNOLOGIES</h2>
-                <p>{project.data.technologies}</p>
-              </div>
+            <div>
+              <h2 className="opacity-50 mb-2">TECHNOLOGIES</h2>
+              <p>{project.data.technologies}</p>
             </div>
           </div>
-        </div>
-
-        {isFilled.image(project.data.mainImage) && (
-          <div className="mt-8 laptop:mt-24 relative rounded-lg overflow-hidden transition-all ease-out duration-300">
-            <PrismicNextImage
-              field={project.data.mainImage}
-              layout="responsive"
-              className="h-full w-full"
-            />
-          </div>
-        )}
-
-        <div className="mt-8 text-2xl">
-          <p>{project.data.companyDescription}</p>
         </div>
       </div>
 
-      {Boolean(project.data.slices.length) && (
-        <div className="border-b border-white w-full h-0.5 mt-8" />
+      {isFilled.image(project.data.mainImage) && (
+        <div className="mt-8 laptop:mt-24 relative rounded-lg overflow-hidden transition-all ease-out duration-300">
+          <PrismicNextImage
+            field={project.data.mainImage}
+            layout="responsive"
+            className="h-full w-full"
+          />
+        </div>
       )}
 
-      <SliceZone slices={project.data.slices} components={components} />
-
-      <Footer />
+      <div className="mt-8 text-2xl">
+        <p>{project.data.companyDescription}</p>
+      </div>
     </div>
-  </div>
+
+    {Boolean(project.data.slices.length) && (
+      <div className="border-b border-white w-full h-0.5 mt-8" />
+    )}
+
+    <SliceZone slices={project.data.slices} components={components} />
+  </Layout>
 );
 
 type GetStaticProps = {

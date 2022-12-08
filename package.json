@@ -13,6 +13,7 @@
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "@headlessui/react": "^1.6.6",
+    "@next/font": "^13.0.6",
     "@prismicio/client": "^6.6.3",
     "@prismicio/helpers": "^2.3.2",
     "@prismicio/next": "^0.1.3",

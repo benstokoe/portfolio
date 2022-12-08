@@ -11,7 +11,7 @@ const ProjectImages = ({ slice }: SliceComponentProps<ProjectImagesSlice>) => (
       {slice.items.map(({ image }) => (
         <div className="relative rounded-lg overflow-hidden">
           <PrismicNextImage field={image} className="w-full h-full rounded-lg" />
-          <p className="opacity-80">{image.alt}</p>
+          <p className="opacity-80 mt-2">{image.alt}</p>
         </div>
       ))}
     </div>

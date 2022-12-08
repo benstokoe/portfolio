@@ -9,7 +9,7 @@ type SocialProps = {
 const Socials = ({ className }: SocialProps) => (
   <div className={`${className} flex flex-wrap mob:flex-nowrap gap-4`}>
     {yourData.socials.map((social) => (
-      <a key={social.title} href={social.link}>
+      <a key={social.title} className="text-xl" href={social.link}>
         {social.title}
       </a>
     ))}
