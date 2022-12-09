@@ -2,7 +2,7 @@ import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsResult, PreviewData } from "next";
 import { PageDocument } from "types.generated";
 
-import Layout from "@/components/Layout/Layout";
+import Layout from "@/components/Layout";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 

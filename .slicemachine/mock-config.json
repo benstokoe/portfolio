@@ -76,6 +76,11 @@
           }
         }
       }
+    },
+    "ClientLogos": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

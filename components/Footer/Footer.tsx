@@ -4,7 +4,7 @@ import Socials from "@/components/Socials";
 
 export const Footer = () => (
   <div className="mt-40">
-    <h1 className="text-2xl text-bold">Contact.</h1>
+    <h1 className="text-4xl text-bold">Contact.</h1>
     <div className="mt-10 laptop:w-3/5">
       <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
         LET&apos;S WORK

@@ -2,64 +2,54 @@ import { Popover } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Button } from "@/components/Button";
 import data from "@/data/portfolio.json";
 
-export const Header = () => {
-  const { name } = data;
-
-  const handleWorkScroll = () => "";
-  const handleAboutScroll = () => "";
-
-  return (
-    <>
-      <Popover className="block tablet:hidden mt-5">
-        {({ open }) => (
-          <>
-            <div className="flex items-center justify-between">
-              <Link href="/">
-                <div className="flex items-center gap-0.5">
-                  <Image src="/logo.svg" alt="BS logo" width={36} height={36} />
-                  <h1 className="font-medium p-2 laptop:p-0 link">{name}.</h1>
-                </div>
-              </Link>
-
-              <div className="flex items-center">
-                <Popover.Button>
-                  {!open && (
-                    <Image height={24} width={24} alt="Menu" src="/images/menu-white.svg" />
-                  )}
-                  {open && (
-                    <Image height={24} width={24} alt="Cancel" src="/images/cancel-white.svg" />
-                  )}
-                </Popover.Button>
+export const Header = () => (
+  <>
+    <Popover className="block tablet:hidden mt-5">
+      {({ open }) => (
+        <>
+          <div className="flex items-center justify-between">
+            <Link href="/">
+              <div className="flex items-center gap-0.5">
+                <Image src="/logo.svg" alt="BS logo" width={36} height={36} />
+                <h1 className="font-medium p-2 laptop:p-0 link">{data.name}.</h1>
               </div>
+            </Link>
+
+            <div className="flex items-center">
+              <Popover.Button>
+                {!open && <Image height={24} width={24} alt="Menu" src="/images/menu-white.svg" />}
+                {open && (
+                  <Image height={24} width={24} alt="Cancel" src="/images/cancel-white.svg" />
+                )}
+              </Popover.Button>
             </div>
-            <Popover.Panel className="absolute right-0 z-10 w-11/12 p-4 bg-slate-800 shadow-md rounded-md">
-              <div className="grid grid-cols-1">
-                <Button onClick={handleWorkScroll}>Work</Button>
-                <Button onClick={handleAboutScroll}>About</Button>
-
-                <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>Contact</Button>
-              </div>
-            </Popover.Panel>
-          </>
-        )}
-      </Popover>
-      <div className="mt-10 hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-slate-900">
-        <Link href="/">
-          <div className="flex items-center gap-4">
-            <Image src="/logo.svg" alt="BS logo" width={64} height={64} />
-            <h1 className="font-medium text-2xl cursor-pointer mob:p-2 laptop:p-0">{name}.</h1>
           </div>
-        </Link>
-        <div className="flex">
-          <Button onClick={handleWorkScroll}>Work</Button>
-          <Button onClick={handleAboutScroll}>About</Button>
+          <Popover.Panel className="absolute right-0 z-10 w-11/12 p-4 bg-slate-800 shadow-md rounded-md">
+            <div className="grid grid-cols-1">
+              <Link href="/work">Work</Link>
+              <Link href="/about">About</Link>
 
-          <Button onClick={() => window.open("mailto:hello@chetanverma.com")}>Contact</Button>
+              <Link href="/contact">Contact</Link>
+            </div>
+          </Popover.Panel>
+        </>
+      )}
+    </Popover>
+    <div className="mt-10 hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-slate-900">
+      <Link href="/">
+        <div className="flex items-center gap-4">
+          <Image src="/logo.svg" alt="BS logo" width={64} height={64} />
+          <h1 className="font-medium text-2xl cursor-pointer mob:p-2 laptop:p-0">{data.name}.</h1>
         </div>
+      </Link>
+      <div className="flex gap-6">
+        <Link href="/work">Work</Link>
+        <Link href="/about">About</Link>
+
+        <Link href="/contact">Contact</Link>
       </div>
-    </>
-  );
-};
+    </div>
+  </>
+);

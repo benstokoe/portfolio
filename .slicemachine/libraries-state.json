@@ -67,6 +67,75 @@
         },
         "screenshotPaths": {}
       },
+      "client_logos": {
+        "library": "slices",
+        "id": "client_logos",
+        "name": "ClientLogos",
+        "description": "ClientLogos",
+        "model": {
+          "id": "client_logos",
+          "type": "SharedSlice",
+          "name": "ClientLogos",
+          "description": "ClientLogos",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ClientLogos",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "clientLogo": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Client Logo",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "clientLogo": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
+                }
+              }
+            ],
+            "primary": {
+              "title": "lying"
+            },
+            "slice_type": "client_logos"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "home_hero": {
         "library": "slices",
         "id": "home_hero",

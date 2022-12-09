@@ -1,0 +1,20 @@
+import { PrismicNextImage } from "@prismicio/next";
+import { SliceComponentProps } from "@prismicio/react";
+
+import { ClientLogosSlice } from "@/types.generated";
+
+const ClientLogos = ({ slice }: SliceComponentProps<ClientLogosSlice>) => (
+  <div className="mt-10 laptop:mt-32">
+    <h1 className="text-4xl text-bold">{slice.primary.title}.</h1>
+
+    <div className="grid grid-cols-3 tablet:grid-cols-4 mt-6 gap-8 items-center">
+      {slice.items.map((logo) => (
+        <div className="w-full grayscale hover:grayscale-0">
+          <PrismicNextImage field={logo.clientLogo} className="mx-auto w-auto max-h-10" />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+export default ClientLogos;

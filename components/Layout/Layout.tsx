@@ -13,7 +13,7 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => (
-  <div className={`relative ${hind.className}`}>
+  <div className={`relative text-lg ${hind.className}`}>
     <Head>
       <title>{data.name}</title>
     </Head>

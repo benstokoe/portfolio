@@ -9,6 +9,17 @@ type Simplify<T> = {
 /** Content for Page documents */
 interface PageDocumentData {
     /**
+     * Title field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
      * Slice Zone field in *Page*
      *
      * - **Field Type**: Slice Zone
@@ -24,7 +35,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = HomeHeroSlice | ProjectsSlice | AboutSlice | ServicesSlice;
+type PageDocumentDataSlicesSlice = HomeHeroSlice | ProjectsSlice | AboutSlice | ServicesSlice | ClientLogosSlice;
 /**
  * Page document from Prismic
  *
@@ -250,6 +261,61 @@ type AboutSliceVariation = AboutSliceDefault;
  *
  */
 export type AboutSlice = prismicT.SharedSlice<"about", AboutSliceVariation>;
+/**
+ * Primary content in ClientLogos → Primary
+ *
+ */
+interface ClientLogosSliceDefaultPrimary {
+    /**
+     * Title field in *ClientLogos → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: client_logos.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+}
+/**
+ * Item in ClientLogos → Items
+ *
+ */
+export interface ClientLogosSliceDefaultItem {
+    /**
+     * Client Logo field in *ClientLogos → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: client_logos.items[].clientLogo
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    clientLogo: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for ClientLogos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ClientLogos`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ClientLogosSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ClientLogosSliceDefaultPrimary>, Simplify<ClientLogosSliceDefaultItem>>;
+/**
+ * Slice variation for *ClientLogos*
+ *
+ */
+type ClientLogosSliceVariation = ClientLogosSliceDefault;
+/**
+ * ClientLogos Shared Slice
+ *
+ * - **API ID**: `client_logos`
+ * - **Description**: `ClientLogos`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ClientLogosSlice = prismicT.SharedSlice<"client_logos", ClientLogosSliceVariation>;
 /**
  * Primary content in HomeHero → Primary
  *
@@ -567,6 +633,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, ServiceDocumentData, ServiceDocument, TechnologyDocumentData, TechnologyDocument, AllDocumentTypes, AboutSliceDefaultPrimary, AboutSliceDefault, AboutSliceVariation, AboutSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, ProjectChallengeSliceDefaultPrimary, ProjectChallengeSliceDefault, ProjectChallengeSliceVariation, ProjectChallengeSlice, ProjectImagesSliceDefaultPrimary, ProjectImagesSliceDefaultItem, ProjectImagesSliceDefault, ProjectImagesSliceVariation, ProjectImagesSlice, ProjectsSliceDefaultPrimary, ProjectsSliceDefaultItem, ProjectsSliceDefault, ProjectsSliceVariation, ProjectsSlice, ProjectSolutionSliceDefaultPrimary, ProjectSolutionSliceDefault, ProjectSolutionSliceVariation, ProjectSolutionSlice, ServicesSliceDefaultPrimary, ServicesSliceDefaultItem, ServicesSliceDefault, ServicesSliceVariation, ServicesSlice };
+        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, ServiceDocumentData, ServiceDocument, TechnologyDocumentData, TechnologyDocument, AllDocumentTypes, AboutSliceDefaultPrimary, AboutSliceDefault, AboutSliceVariation, AboutSlice, ClientLogosSliceDefaultPrimary, ClientLogosSliceDefaultItem, ClientLogosSliceDefault, ClientLogosSliceVariation, ClientLogosSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, ProjectChallengeSliceDefaultPrimary, ProjectChallengeSliceDefault, ProjectChallengeSliceVariation, ProjectChallengeSlice, ProjectImagesSliceDefaultPrimary, ProjectImagesSliceDefaultItem, ProjectImagesSliceDefault, ProjectImagesSliceVariation, ProjectImagesSlice, ProjectsSliceDefaultPrimary, ProjectsSliceDefaultItem, ProjectsSliceDefault, ProjectsSliceVariation, ProjectsSlice, ProjectSolutionSliceDefaultPrimary, ProjectSolutionSliceDefault, ProjectSolutionSliceVariation, ProjectSolutionSlice, ServicesSliceDefaultPrimary, ServicesSliceDefaultItem, ServicesSliceDefault, ServicesSliceVariation, ServicesSlice };
     }
 }

@@ -5,7 +5,7 @@ import { GetStaticPropsResult, PreviewData } from "next";
 import Head from "next/head";
 import { ProjectDocument } from "types.generated";
 
-import Layout from "@/components/Layout/Layout";
+import Layout from "@/components/Layout";
 import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
@@ -18,7 +18,7 @@ const Project = ({ project }: ProjectProps) => (
   <Layout>
     <Head>
       <title>
-        {data.name} - {project.data.name}
+        {project.data.name} | {data.name}
       </title>
     </Head>
 
