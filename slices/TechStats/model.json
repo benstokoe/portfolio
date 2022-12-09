@@ -1,15 +1,15 @@
 {
-  "id": "about",
+  "id": "tech_stats",
   "type": "SharedSlice",
-  "name": "About",
-  "description": "About",
+  "name": "TechStats",
+  "description": "TechStats",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "About",
+      "description": "TechStats",
       "primary": {
         "title": {
           "type": "Text",
@@ -18,13 +18,18 @@
             "placeholder": ""
           }
         },
-        "about": {
-          "type": "StructuredText",
+        "react": {
+          "type": "Text",
           "config": {
-            "label": "About",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,paragraph"
+            "label": "React",
+            "placeholder": ""
+          }
+        },
+        "next": {
+          "type": "Text",
+          "config": {
+            "label": "Next",
+            "placeholder": ""
           }
         }
       },

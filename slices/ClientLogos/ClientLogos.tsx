@@ -10,7 +10,11 @@ const ClientLogos = ({ slice }: SliceComponentProps<ClientLogosSlice>) => (
     <div className="grid grid-cols-3 tablet:grid-cols-4 mt-6 gap-8 items-center">
       {slice.items.map((logo) => (
         <div className="w-full grayscale hover:grayscale-0">
-          <PrismicNextImage field={logo.clientLogo} className="mx-auto w-auto max-h-10" />
+          <PrismicNextImage
+            width={120}
+            field={logo.clientLogo}
+            className="mx-auto max-w-auto max-h-auto max-h-16"
+          />
         </div>
       ))}
     </div>

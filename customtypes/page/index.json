@@ -38,6 +38,12 @@
             },
             "client_logos": {
               "type": "SharedSlice"
+            },
+            "tech_stats": {
+              "type": "SharedSlice"
+            },
+            "work_stats": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -3,30 +3,36 @@
 import About from './About';
 import ClientLogos from './ClientLogos';
 import HomeHero from './HomeHero';
-import ProjectChallenge from './ProjectChallenge';
-import ProjectImages from './ProjectImages';
-import ProjectSolution from './ProjectSolution';
-import Projects from './Projects';
 import Services from './Services';
+import TechStats from './TechStats';
+import Work from './Work';
+import WorkChallenge from './WorkChallenge';
+import WorkImages from './WorkImages';
+import WorkSolution from './WorkSolution';
+import WorkStats from './WorkStats';
 
 export {
 	About,
 	ClientLogos,
 	HomeHero,
-	ProjectChallenge,
-	ProjectImages,
-	ProjectSolution,
-	Projects,
 	Services,
+	TechStats,
+	Work,
+	WorkChallenge,
+	WorkImages,
+	WorkSolution,
+	WorkStats,
 };
 
 export const components = {
 	about: About,
 	client_logos: ClientLogos,
 	home_hero: HomeHero,
-	project_challenge: ProjectChallenge,
-	project_images: ProjectImages,
-	project_solution: ProjectSolution,
-	projects: Projects,
 	services: Services,
+	tech_stats: TechStats,
+	projects: Work,
+	project_challenge: WorkChallenge,
+	project_images: WorkImages,
+	project_solution: WorkSolution,
+	work_stats: WorkStats,
 };

@@ -3,7 +3,7 @@ import { SliceComponentProps } from "@prismicio/react";
 
 import { ProjectImagesSlice } from "@/types.generated";
 
-const ProjectImages = ({ slice }: SliceComponentProps<ProjectImagesSlice>) => (
+const WorkImages = ({ slice }: SliceComponentProps<ProjectImagesSlice>) => (
   <div className="mt-8">
     {slice.primary.title && <h2 className="mb-4 text-3xl">{slice.primary.title}</h2>}
 
@@ -18,4 +18,4 @@ const ProjectImages = ({ slice }: SliceComponentProps<ProjectImagesSlice>) => (
   </div>
 );
 
-export default ProjectImages;
+export default WorkImages;

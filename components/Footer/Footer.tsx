@@ -13,18 +13,18 @@ export const Footer = () => (
         TOGETHER
       </h1>
 
-      <p className="mt-6 text-3xl">
+      <p className="mt-6 opacity-80">
         I am open to both contract and freelance developer projects and would love to hear what your
         ideas are.
       </p>
-      <p className="mt-4 mb-6 text-2xl">
+      <p className="mt-4 mb-6 opacity-80">
         Feel free to drop me an email and I&apos;ll let you know how I can help you!
       </p>
 
       <button
         type="button"
         onClick={() => window.open("mailto:mail@benstokoe.co.uk")}
-        className="mb-6 text-5xl text-bold"
+        className="mb-6 text-3xl tablet:text-5xl text-bold"
       >
         mail@benstokoe.co.uk
       </button>

@@ -13,7 +13,7 @@ export const linkResolver = (doc: FilledContentRelationshipField) => {
   }
 
   if (doc.type === "project") {
-    return `/project/${doc.uid}`;
+    return `/work/${doc.uid}`;
   }
 
   return "/";

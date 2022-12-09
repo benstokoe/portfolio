@@ -32,7 +32,7 @@
                     "label": "About",
                     "placeholder": "",
                     "allowTargetBlank": true,
-                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                    "multi": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,paragraph"
                   }
                 }
               },
@@ -49,11 +49,11 @@
               {}
             ],
             "primary": {
-              "title": "yard",
+              "title": "tried",
               "about": [
                 {
                   "type": "paragraph",
-                  "text": "Laboris laborum aute duis sint cillum reprehenderit fugiat officia laboris proident. Cillum anim magna sit eiusmod consectetur velit incididunt anim. Voluptate est excepteur pariatur sint magna reprehenderit laboris mollit elit cupidatat qui anim.",
+                  "text": "Ullamco sit sint velit magna incididunt elit et ex voluptate fugiat. Enim et et tempor sit elit excepteur velit adipisicing in nostrud nisi culpa.",
                   "spans": []
                 }
               ]
@@ -131,8 +131,8 @@
           }
         },
         "meta": {
-          "fileName": "index",
-          "extension": "js"
+          "fileName": "ClientLogos",
+          "extension": "tsx"
         },
         "screenshotPaths": {}
       },
@@ -191,263 +191,6 @@
         "mocks": {},
         "meta": {
           "fileName": "HomeHero",
-          "extension": "tsx"
-        },
-        "screenshotPaths": {}
-      },
-      "project_challenge": {
-        "library": "slices",
-        "id": "project_challenge",
-        "name": "ProjectChallenge",
-        "description": "ProjectChallenge",
-        "model": {
-          "id": "project_challenge",
-          "type": "SharedSlice",
-          "name": "ProjectChallenge",
-          "description": "ProjectChallenge",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "ProjectChallenge",
-              "primary": {
-                "challenge": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Challenge",
-                    "placeholder": "",
-                    "allowTargetBlank": false,
-                    "multi": "paragraph,strong"
-                  }
-                }
-              },
-              "items": {},
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "version": "sktwi1xtmkfgx8626",
-            "items": [
-              {}
-            ],
-            "primary": {
-              "challenge": [
-                {
-                  "type": "paragraph",
-                  "text": "Do nulla minim occaecat qui laborum enim elit. In duis ad ex consectetur anim laborum nostrud magna ipsum occaecat adipisicing. Excepteur do do labore cillum ut do tempor ipsum.",
-                  "spans": []
-                }
-              ]
-            },
-            "slice_type": "project_challenge"
-          }
-        },
-        "meta": {
-          "fileName": "ProjectChallenge",
-          "extension": "tsx"
-        },
-        "screenshotPaths": {}
-      },
-      "project_images": {
-        "library": "slices",
-        "id": "project_images",
-        "name": "ProjectImages",
-        "description": "ProjectImages",
-        "model": {
-          "id": "project_images",
-          "type": "SharedSlice",
-          "name": "ProjectImages",
-          "description": "ProjectImages",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "ProjectImages",
-              "primary": {
-                "title": {
-                  "type": "Text",
-                  "config": {
-                    "label": "Title",
-                    "placeholder": ""
-                  }
-                }
-              },
-              "items": {
-                "image": {
-                  "type": "Image",
-                  "config": {
-                    "label": "Image",
-                    "constraint": {},
-                    "thumbnails": []
-                  }
-                }
-              },
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "version": "sktwi1xtmkfgx8626",
-            "items": [
-              {
-                "image": {
-                  "dimensions": {
-                    "width": 900,
-                    "height": 500
-                  },
-                  "alt": null,
-                  "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
-                }
-              }
-            ],
-            "primary": {
-              "title": "apple"
-            },
-            "slice_type": "project_images"
-          }
-        },
-        "meta": {
-          "fileName": "ProjectImages",
-          "extension": "tsx"
-        },
-        "screenshotPaths": {}
-      },
-      "project_solution": {
-        "library": "slices",
-        "id": "project_solution",
-        "name": "ProjectSolution",
-        "description": "ProjectSolution",
-        "model": {
-          "id": "project_solution",
-          "type": "SharedSlice",
-          "name": "ProjectSolution",
-          "description": "ProjectSolution",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "ProjectSolution",
-              "primary": {
-                "solution": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Solution",
-                    "placeholder": "",
-                    "allowTargetBlank": true,
-                    "single": "paragraph,strong,em"
-                  }
-                }
-              },
-              "items": {},
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "version": "sktwi1xtmkfgx8626",
-            "items": [
-              {}
-            ],
-            "primary": {
-              "solution": [
-                {
-                  "type": "paragraph",
-                  "text": "Anim consectetur eiusmod labore enim voluptate qui eu sunt eu esse voluptate enim esse eiusmod.",
-                  "spans": []
-                }
-              ]
-            },
-            "slice_type": "project_solution"
-          }
-        },
-        "meta": {
-          "fileName": "ProjectSolution",
-          "extension": "tsx"
-        },
-        "screenshotPaths": {}
-      },
-      "projects": {
-        "library": "slices",
-        "id": "projects",
-        "name": "Projects",
-        "description": "Projects",
-        "model": {
-          "id": "projects",
-          "type": "SharedSlice",
-          "name": "Projects",
-          "description": "Projects",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "Projects",
-              "primary": {
-                "title": {
-                  "type": "Text",
-                  "config": {
-                    "label": "Title",
-                    "placeholder": ""
-                  }
-                }
-              },
-              "items": {
-                "projects": {
-                  "type": "Link",
-                  "config": {
-                    "label": "Projects",
-                    "select": "document",
-                    "customtypes": [
-                      "project"
-                    ]
-                  }
-                }
-              },
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "version": "sktwi1xtmkfgx8626",
-            "items": [
-              {
-                "projects": {
-                  "id": "mock_document_id",
-                  "link_type": "Document",
-                  "type": "project",
-                  "tags": [],
-                  "lang": "en-us",
-                  "slug": null,
-                  "first_publication_date": "1970-01-01T00:00:01+0000",
-                  "last_publication_date": "1970-01-01T01:00:00+0000"
-                }
-              }
-            ],
-            "primary": {
-              "title": "reason"
-            },
-            "slice_type": "projects"
-          }
-        },
-        "meta": {
-          "fileName": "Projects",
           "extension": "tsx"
         },
         "screenshotPaths": {}
@@ -520,6 +263,387 @@
         },
         "meta": {
           "fileName": "Services",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "tech_stats": {
+        "library": "slices",
+        "id": "tech_stats",
+        "name": "TechStats",
+        "description": "TechStats",
+        "model": {
+          "id": "tech_stats",
+          "type": "SharedSlice",
+          "name": "TechStats",
+          "description": "TechStats",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "TechStats",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "react": {
+                  "type": "Text",
+                  "config": {
+                    "label": "React",
+                    "placeholder": ""
+                  }
+                },
+                "next": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Next",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": "progress",
+              "react": "merely",
+              "next": "least"
+            },
+            "slice_type": "tech_stats"
+          }
+        },
+        "meta": {
+          "fileName": "TechStats",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "projects": {
+        "library": "slices",
+        "id": "projects",
+        "name": "Work",
+        "description": "Projects",
+        "model": {
+          "id": "projects",
+          "type": "SharedSlice",
+          "name": "Work",
+          "description": "Projects",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Projects",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "work": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Work",
+                    "select": "document",
+                    "customtypes": [
+                      "project"
+                    ]
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "work": {
+                  "id": "mock_document_id",
+                  "link_type": "Document",
+                  "type": "project",
+                  "tags": [],
+                  "lang": "en-us",
+                  "slug": null,
+                  "first_publication_date": "1970-01-01T00:00:01+0000",
+                  "last_publication_date": "1970-01-01T01:00:00+0000"
+                }
+              }
+            ],
+            "primary": {
+              "title": "industrial"
+            },
+            "slice_type": "projects"
+          }
+        },
+        "meta": {
+          "fileName": "Work",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "project_challenge": {
+        "library": "slices",
+        "id": "project_challenge",
+        "name": "WorkChallenge",
+        "description": "ProjectChallenge",
+        "model": {
+          "id": "project_challenge",
+          "type": "SharedSlice",
+          "name": "WorkChallenge",
+          "description": "ProjectChallenge",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ProjectChallenge",
+              "primary": {
+                "challenge": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Challenge",
+                    "placeholder": "",
+                    "allowTargetBlank": false,
+                    "multi": "paragraph,strong"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "challenge": [
+                {
+                  "type": "paragraph",
+                  "text": "Do nulla minim occaecat qui laborum enim elit. In duis ad ex consectetur anim laborum nostrud magna ipsum occaecat adipisicing. Excepteur do do labore cillum ut do tempor ipsum.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "project_challenge"
+          }
+        },
+        "meta": {
+          "fileName": "WorkChallenge",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "project_images": {
+        "library": "slices",
+        "id": "project_images",
+        "name": "WorkImages",
+        "description": "ProjectImages",
+        "model": {
+          "id": "project_images",
+          "type": "SharedSlice",
+          "name": "WorkImages",
+          "description": "ProjectImages",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ProjectImages",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+                }
+              }
+            ],
+            "primary": {
+              "title": "apple"
+            },
+            "slice_type": "project_images"
+          }
+        },
+        "meta": {
+          "fileName": "WorkImages",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "project_solution": {
+        "library": "slices",
+        "id": "project_solution",
+        "name": "WorkSolution",
+        "description": "ProjectSolution",
+        "model": {
+          "id": "project_solution",
+          "type": "SharedSlice",
+          "name": "WorkSolution",
+          "description": "ProjectSolution",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ProjectSolution",
+              "primary": {
+                "solution": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Solution",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,strong,em"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "solution": [
+                {
+                  "type": "paragraph",
+                  "text": "Anim consectetur eiusmod labore enim voluptate qui eu sunt eu esse voluptate enim esse eiusmod.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "project_solution"
+          }
+        },
+        "meta": {
+          "fileName": "WorkSolution",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "work_stats": {
+        "library": "slices",
+        "id": "work_stats",
+        "name": "WorkStats",
+        "description": "WorkStats",
+        "model": {
+          "id": "work_stats",
+          "type": "SharedSlice",
+          "name": "WorkStats",
+          "description": "WorkStats",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "WorkStats",
+              "primary": {
+                "react": {
+                  "type": "Text",
+                  "config": {
+                    "label": "React",
+                    "placeholder": ""
+                  }
+                },
+                "next": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Next",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "react": "parts",
+              "next": "kept"
+            },
+            "slice_type": "work_stats"
+          }
+        },
+        "meta": {
+          "fileName": "WorkStats",
           "extension": "tsx"
         },
         "screenshotPaths": {}

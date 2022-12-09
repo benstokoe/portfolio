@@ -2,7 +2,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 import { ProjectSolutionSlice } from "@/types.generated";
 
-const ProjectSolution = ({ slice }: SliceComponentProps<ProjectSolutionSlice>) => (
+const WorkSolution = ({ slice }: SliceComponentProps<ProjectSolutionSlice>) => (
   <div className="mt-8">
     <h2 className="text-4xl laptop:text-5xl font-semibold">Solution</h2>
 
@@ -12,4 +12,4 @@ const ProjectSolution = ({ slice }: SliceComponentProps<ProjectSolutionSlice>) =
   </div>
 );
 
-export default ProjectSolution;
+export default WorkSolution;

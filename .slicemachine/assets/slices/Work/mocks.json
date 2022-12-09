@@ -4,7 +4,7 @@
     "version": "sktwi1xtmkfgx8626",
     "items": [
       {
-        "projects": {
+        "work": {
           "id": "mock_document_id",
           "link_type": "Document",
           "type": "project",
@@ -17,7 +17,7 @@
       }
     ],
     "primary": {
-      "title": "reason"
+      "title": "industrial"
     },
     "slice_type": "projects"
   }

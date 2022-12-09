@@ -1,7 +1,7 @@
 {
   "id": "project_solution",
   "type": "SharedSlice",
-  "name": "ProjectSolution",
+  "name": "WorkSolution",
   "description": "ProjectSolution",
   "variations": [
     {

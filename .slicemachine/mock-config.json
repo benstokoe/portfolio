@@ -3,7 +3,8 @@
     "page": {},
     "project": {},
     "technology": {},
-    "service": {}
+    "service": {},
+    "about": {}
   },
   "slices": {
     "HomeHero": {
@@ -44,7 +45,14 @@
     },
     "About": {
       "default": {
-        "primary": {}
+        "primary": {
+          "about": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     },
     "ProjectImages": {
@@ -78,6 +86,22 @@
       }
     },
     "ClientLogos": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "WorkStats": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Work": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "TechStats": {
       "default": {
         "primary": {}
       }

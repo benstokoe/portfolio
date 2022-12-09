@@ -1,7 +1,7 @@
 {
   "id": "projects",
   "type": "SharedSlice",
-  "name": "Projects",
+  "name": "Work",
   "description": "Projects",
   "variations": [
     {
@@ -20,10 +20,10 @@
         }
       },
       "items": {
-        "projects": {
+        "work": {
           "type": "Link",
           "config": {
-            "label": "Projects",
+            "label": "Work",
             "select": "document",
             "customtypes": [
               "project"

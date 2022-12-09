@@ -37,14 +37,15 @@ export const Header = () => (
         </>
       )}
     </Popover>
-    <div className="mt-10 hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-slate-900">
+
+    <div className="mt-10 hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-slate-900 py-4">
       <Link href="/">
         <div className="flex items-center gap-4">
           <Image src="/logo.svg" alt="BS logo" width={64} height={64} />
-          <h1 className="font-medium text-2xl cursor-pointer mob:p-2 laptop:p-0">{data.name}.</h1>
+          <h1 className="font-medium text-3xl cursor-pointer">{data.name}.</h1>
         </div>
       </Link>
-      <div className="flex gap-6">
+      <div className="flex gap-6 text-2xl font-bold">
         <Link href="/work">Work</Link>
         <Link href="/about">About</Link>
 

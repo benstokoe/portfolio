@@ -1,7 +1,7 @@
 {
   "id": "project_challenge",
   "type": "SharedSlice",
-  "name": "ProjectChallenge",
+  "name": "WorkChallenge",
   "description": "ProjectChallenge",
   "variations": [
     {

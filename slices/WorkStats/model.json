@@ -1,34 +1,32 @@
 {
-  "id": "project_images",
+  "id": "work_stats",
   "type": "SharedSlice",
-  "name": "ProjectImages",
-  "description": "ProjectImages",
+  "name": "WorkStats",
+  "description": "WorkStats",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "ProjectImages",
+      "description": "WorkStats",
       "primary": {
-        "title": {
+        "react": {
           "type": "Text",
           "config": {
-            "label": "Title",
+            "label": "React",
+            "placeholder": ""
+          }
+        },
+        "next": {
+          "type": "Text",
+          "config": {
+            "label": "Next",
             "placeholder": ""
           }
         }
       },
-      "items": {
-        "image": {
-          "type": "Image",
-          "config": {
-            "label": "Image",
-            "constraint": {},
-            "thumbnails": []
-          }
-        }
-      },
+      "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]
