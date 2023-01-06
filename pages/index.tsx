@@ -29,7 +29,7 @@ export const getStaticProps = async ({
 
   const page = await client.getByUID("page", "home", {
     lang: locale,
-    fetchLinks: ["project.name", "project.mainImage", "project.description"],
+    fetchLinks: ["project.name", "project.mainImage", "project.description", "about.about"],
   });
 
   return {

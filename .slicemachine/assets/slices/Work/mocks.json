@@ -17,7 +17,8 @@
       }
     ],
     "primary": {
-      "title": "industrial"
+      "title": "condition",
+      "showMore": true
     },
     "slice_type": "projects"
   }

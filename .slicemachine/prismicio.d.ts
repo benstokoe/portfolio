@@ -261,6 +261,17 @@ interface AboutSliceDefaultPrimary {
      *
      */
     about: prismicT.RichTextField;
+    /**
+     * Show More field in *About → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: about.primary.showMore
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    showMore: prismicT.BooleanField;
 }
 /**
  * Default variation for About Slice
@@ -538,6 +549,17 @@ interface ProjectsSliceDefaultPrimary {
      *
      */
     title: prismicT.KeyTextField;
+    /**
+     * Show More field in *Work → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: projects.primary.showMore
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    showMore: prismicT.BooleanField;
 }
 /**
  * Item in Work → Items

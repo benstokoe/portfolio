@@ -4,7 +4,14 @@
     "project": {},
     "technology": {},
     "service": {},
-    "about": {}
+    "about": {
+      "about": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "HomeHero": {

@@ -17,6 +17,15 @@
             "label": "Title",
             "placeholder": ""
           }
+        },
+        "showMore": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show More",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {

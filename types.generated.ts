@@ -6,6 +6,30 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for About documents */
+interface AboutDocumentData {
+    /**
+     * About field in *About*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about.about
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    about: prismicT.RichTextField;
+}
+/**
+ * About document from Prismic
+ *
+ * - **API ID**: `about`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 /** Content for Page documents */
 interface PageDocumentData {
     /**
@@ -211,7 +235,7 @@ interface TechnologyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type TechnologyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<TechnologyDocumentData>, "technology", Lang>;
-export type AllDocumentTypes = PageDocument | ProjectDocument | ServiceDocument | TechnologyDocument;
+export type AllDocumentTypes = AboutDocument | PageDocument | ProjectDocument | ServiceDocument | TechnologyDocument;
 /**
  * Primary content in About → Primary
  *
@@ -237,6 +261,17 @@ interface AboutSliceDefaultPrimary {
      *
      */
     about: prismicT.RichTextField;
+    /**
+     * Show More field in *About → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: about.primary.showMore
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    showMore: prismicT.BooleanField;
 }
 /**
  * Default variation for About Slice
@@ -533,6 +568,17 @@ interface ProjectsSliceDefaultPrimary {
      *
      */
     title: prismicT.KeyTextField;
+    /**
+     * Show More field in *Work → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: projects.primary.showMore
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    showMore: prismicT.BooleanField;
 }
 /**
  * Item in Work → Items
@@ -741,6 +787,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, ServiceDocumentData, ServiceDocument, TechnologyDocumentData, TechnologyDocument, AllDocumentTypes, AboutSliceDefaultPrimary, AboutSliceDefault, AboutSliceVariation, AboutSlice, ClientLogosSliceDefaultPrimary, ClientLogosSliceDefaultItem, ClientLogosSliceDefault, ClientLogosSliceVariation, ClientLogosSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, ProjectChallengeSliceDefaultPrimary, ProjectChallengeSliceDefault, ProjectChallengeSliceVariation, ProjectChallengeSlice, ProjectImagesSliceDefaultPrimary, ProjectImagesSliceDefaultItem, ProjectImagesSliceDefault, ProjectImagesSliceVariation, ProjectImagesSlice, ProjectSolutionSliceDefaultPrimary, ProjectSolutionSliceDefault, ProjectSolutionSliceVariation, ProjectSolutionSlice, ProjectsSliceDefaultPrimary, ProjectsSliceDefaultItem, ProjectsSliceDefault, ProjectsSliceVariation, ProjectsSlice, ServicesSliceDefaultPrimary, ServicesSliceDefaultItem, ServicesSliceDefault, ServicesSliceVariation, ServicesSlice, TechStatsSliceDefaultPrimary, TechStatsSliceDefault, TechStatsSliceVariation, TechStatsSlice, WorkStatsSliceDefaultPrimary, WorkStatsSliceDefault, WorkStatsSliceVariation, WorkStatsSlice };
+        export type { AboutDocumentData, AboutDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, ServiceDocumentData, ServiceDocument, TechnologyDocumentData, TechnologyDocument, AllDocumentTypes, AboutSliceDefaultPrimary, AboutSliceDefault, AboutSliceVariation, AboutSlice, ClientLogosSliceDefaultPrimary, ClientLogosSliceDefaultItem, ClientLogosSliceDefault, ClientLogosSliceVariation, ClientLogosSlice, HomeHeroSliceDefaultPrimary, HomeHeroSliceDefault, HomeHeroSliceVariation, HomeHeroSlice, ProjectChallengeSliceDefaultPrimary, ProjectChallengeSliceDefault, ProjectChallengeSliceVariation, ProjectChallengeSlice, ProjectImagesSliceDefaultPrimary, ProjectImagesSliceDefaultItem, ProjectImagesSliceDefault, ProjectImagesSliceVariation, ProjectImagesSlice, ProjectSolutionSliceDefaultPrimary, ProjectSolutionSliceDefault, ProjectSolutionSliceVariation, ProjectSolutionSlice, ProjectsSliceDefaultPrimary, ProjectsSliceDefaultItem, ProjectsSliceDefault, ProjectsSliceVariation, ProjectsSlice, ServicesSliceDefaultPrimary, ServicesSliceDefaultItem, ServicesSliceDefault, ServicesSliceVariation, ServicesSlice, TechStatsSliceDefaultPrimary, TechStatsSliceDefault, TechStatsSliceVariation, TechStatsSlice, WorkStatsSliceDefaultPrimary, WorkStatsSliceDefault, WorkStatsSliceVariation, WorkStatsSlice };
     }
 }
