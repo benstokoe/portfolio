@@ -26,8 +26,8 @@ export const Header = () => (
               </Popover.Button>
             </div>
           </div>
-          <Popover.Panel className="absolute right-0 z-10 w-11/12 p-4 bg-slate-800 shadow-md rounded-md">
-            <div className="grid grid-cols-1">
+          <Popover.Panel className="absolute right-4 left-4 z-10 w-11/12 p-4 bg-slate-800 shadow-md rounded-md">
+            <div className="grid grid-cols-1 gap-2">
               <Link href="/work">Work</Link>
               <Link href="/about">About</Link>
 
