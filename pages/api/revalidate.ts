@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.body.type === "api-update" && req.body.documents.length > 0) {
     // Check for secret to confirm this is a valid request
 
-    console.log(process.env.PRISMIC_WEBHOOK_SECRET);
+    console.log(req.body.secret, process.env.PRISMIC_WEBHOOK_SECRET);
 
     if (req.body.secret !== process.env.PRISMIC_WEBHOOK_SECRET) {
       return res.status(401).json({ message: "Invalid token" });
