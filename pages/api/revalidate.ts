@@ -22,6 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const documents = await client.getAllByIDs(req.body.documents);
     const urls = documents.map((doc) => prismicH.asLink(doc, linkResolver));
 
+    // eslint-disable-next-line no-console
     console.log(urls);
 
     try {
