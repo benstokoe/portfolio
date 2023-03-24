@@ -20,6 +20,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(401).json({ message: "Invalid token" });
     }
 
+    console.log("here!");
+    
+
     const client = createClient();
 
     // Get a list of URLs for any new, updated, or deleted documents
