@@ -24,8 +24,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const urls = documents.map((doc) => prismicH.asLink(doc, linkResolver));
 
-    console.log(urls);
-
     try {
       // Revalidate the URLs for those documents
       await Promise.all(urls.map((url) => res.revalidate(url as string)));

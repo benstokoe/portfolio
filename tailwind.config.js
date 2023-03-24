@@ -25,7 +25,21 @@ module.exports = {
     extend: {},
   },
   daisyui: {
-    themes: ["dracula"],
+    themes: [
+      {
+        "catppuccin-mocha": {
+          primary: "#cba6f7",
+          secondary: "#f5c2e7",
+          accent: "#94e2d5",
+          neutral: "#11111b",
+          "base-100": "#1e1e2e",
+          info: "#74c7ec",
+          success: "#a6e3a1",
+          warning: "#f9e2af",
+          error: "#f38ba8",
+        },
+      },
+    ],
   },
   plugins: [require("@tailwindcss/aspect-ratio"), require("daisyui")],
 };
