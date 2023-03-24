@@ -15,7 +15,7 @@ const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
         };
 
         return (
-          <PrismicLink field={work}>
+          <PrismicLink field={work} key={workData.uid}>
             <WorkCard
               key={workData.uid}
               image={workData.data.mainImage}
