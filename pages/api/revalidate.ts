@@ -19,16 +19,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const client = createClient();
 
-    console.log("created client");
-
     // Get a list of URLs for any new, updated, or deleted documents
     const documents = await client.getAllByIDs(req.body.documents);
 
-    console.log("here", documents);
-
     const urls = documents.map((doc) => prismicH.asLink(doc, linkResolver));
 
-    console.log("urls", urls);
+    console.log(urls);
 
     try {
       // Revalidate the URLs for those documents

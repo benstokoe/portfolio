@@ -16,6 +16,10 @@ export const linkResolver = (doc: FilledContentRelationshipField) => {
     return `/work/${doc.uid}`;
   }
 
+  if (doc.uid) {
+    return `/${doc.uid}`;
+  }
+
   return "/";
 };
 
