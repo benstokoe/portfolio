@@ -13,24 +13,22 @@ import { createClient, linkResolver } from "prismicio";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.body.type === "api-update" && req.body.documents.length > 0) {
     // Check for secret to confirm this is a valid request
-
-    console.log(req.body.secret, process.env.PRISMIC_WEBHOOK_SECRET);
-
     if (req.body.secret !== process.env.PRISMIC_WEBHOOK_SECRET) {
       return res.status(401).json({ message: "Invalid token" });
     }
 
-    console.log("here!");
-    
-
     const client = createClient();
+
+    console.log("created client");
 
     // Get a list of URLs for any new, updated, or deleted documents
     const documents = await client.getAllByIDs(req.body.documents);
+
+    console.log("here", documents);
+
     const urls = documents.map((doc) => prismicH.asLink(doc, linkResolver));
 
-    // eslint-disable-next-line no-console
-    console.log(urls);
+    console.log("urls", urls);
 
     try {
       // Revalidate the URLs for those documents
