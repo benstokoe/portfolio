@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as prismicH from "@prismicio/helpers";
 import { NextApiRequest, NextApiResponse } from "next";
 import { createClient, linkResolver } from "prismicio";
@@ -12,6 +13,9 @@ import { createClient, linkResolver } from "prismicio";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.body.type === "api-update" && req.body.documents.length > 0) {
     // Check for secret to confirm this is a valid request
+
+    console.log(process.env.PRISMIC_WEBHOOK_SECRET);
+
     if (req.body.secret !== process.env.PRISMIC_WEBHOOK_SECRET) {
       return res.status(401).json({ message: "Invalid token" });
     }
