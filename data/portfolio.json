@@ -1,0 +1,16 @@
+{
+  "name": "Ben A. Stokoe",
+  "darkMode": true,
+  "socials": [
+    {
+      "id": "1",
+      "title": "Github",
+      "link": "https://github.com/benstokoe"
+    },
+    {
+      "id": "2",
+      "title": "LinkedIn",
+      "link": "https://www.linkedin.com/in/benstokoe/"
+    }
+  ]
+}

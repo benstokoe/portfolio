@@ -1,0 +1,46 @@
+{
+  "id": "projects",
+  "type": "SharedSlice",
+  "name": "Work",
+  "description": "Projects",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Projects",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "showMore": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show More",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {
+        "work": {
+          "type": "Link",
+          "config": {
+            "label": "Work",
+            "select": "document",
+            "customtypes": [
+              "project"
+            ]
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

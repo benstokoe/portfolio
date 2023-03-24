@@ -1,0 +1,53 @@
+{
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "home_hero": {
+              "type": "SharedSlice"
+            },
+            "projects": {
+              "type": "SharedSlice"
+            },
+            "about": {
+              "type": "SharedSlice"
+            },
+            "services": {
+              "type": "SharedSlice"
+            },
+            "client_logos": {
+              "type": "SharedSlice"
+            },
+            "tech_stats": {
+              "type": "SharedSlice"
+            },
+            "work_stats": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

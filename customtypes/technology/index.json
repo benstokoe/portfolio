@@ -1,0 +1,17 @@
+{
+  "id": "technology",
+  "label": "Technology",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

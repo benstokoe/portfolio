@@ -1,0 +1,24 @@
+{
+  "id": "service",
+  "label": "Service",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
