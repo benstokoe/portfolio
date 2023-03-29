@@ -1,5 +1,3 @@
-import React from "react";
-
 import { AnimateIn } from "@/components/AnimateIn";
 import { Contact } from "@/components/Contact";
 

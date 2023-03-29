@@ -19,6 +19,7 @@ export const WorkCard = ({ image, name, description }: WorkCardProps) => (
             <PrismicNextImage
               priority
               field={image}
+              width="700"
               className="h-full w-full tablet:hover:scale-110 transition-all ease-out duration-300"
             />
           </div>
