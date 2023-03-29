@@ -20,6 +20,7 @@ export const WorkCard = ({ image, name, description }: WorkCardProps) => (
               priority
               field={image}
               width="700"
+              height="500"
               className="h-full w-full tablet:hover:scale-110 transition-all ease-out duration-300"
             />
           </div>
