@@ -3,7 +3,7 @@
   "version": "3.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"pnpm:next:dev\" \"ppm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
+    "dev": "concurrently \"pnpm:next:dev\" \"pnpm:slicemachine\" --names \"next,slicemachine\" --prefix-colors blue,magenta",
     "next:dev": "next",
     "build": "next build",
     "start": "next start",
