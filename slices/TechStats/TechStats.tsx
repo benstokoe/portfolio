@@ -5,7 +5,7 @@ import { TechStatsSlice } from "@/types.generated";
 
 const TechStats = ({ slice }: SliceComponentProps<TechStatsSlice>) => (
   <div className="laptop:mt-20 mt-10">
-    {slice.primary.title && <h2 className="mb-4 text-3xl">{slice.primary.title}</h2>}
+    {slice.primary.title && <h2 className="mb-4 text-3xl text-info">{slice.primary.title}</h2>}
 
     <AnimateIn>
       <div className="stats shadow w-full stats-vertical laptop:stats-horizontal bg-base-300">

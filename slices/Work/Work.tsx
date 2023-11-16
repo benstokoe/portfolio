@@ -5,7 +5,9 @@ import { ProjectDocument, ProjectsSlice } from "@/types.generated";
 
 const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
   <div className="mt-10 laptop:mt-32">
-    {slice.primary.title && <h1 className="text-4xl text-bold">{slice.primary.title}.</h1>}
+    {slice.primary.title && (
+      <h1 className="text-4xl text-bold text-primary">{slice.primary.title}.</h1>
+    )}
 
     <div className="mt-5 laptop:mt-10 grid tablet:grid-cols-2 gap-8 gap-y-12">
       {slice.items.map(({ work }) => {
@@ -23,7 +25,7 @@ const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
               description={workData.data.description as string}
             />
 
-            <p className="mt-4 link hover:text-primary">View work</p>
+            <p className="mt-4 hover:text-secondary text-accent">View work</p>
           </PrismicLink>
         );
       })}

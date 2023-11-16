@@ -12,6 +12,12 @@ type PageProps = {
   page: PageDocument;
 };
 
+const titleColour = {
+  work: "primary",
+  about: "secondary",
+  contact: "accent",
+};
+
 const Page = ({ page }: PageProps) => (
   <Layout>
     <Head>
@@ -22,7 +28,11 @@ const Page = ({ page }: PageProps) => (
 
     {page.data.title && (
       <div className="laptop:mt-20 mt-10">
-        <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5">
+        <h1
+          className={`text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5 text-${
+            titleColour[page.data.title.toLowerCase()]
+          }`}
+        >
           {page.data.title}.
         </h1>
       </div>

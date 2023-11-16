@@ -6,7 +6,7 @@ import { ClientLogosSlice } from "@/types.generated";
 
 const ClientLogos = ({ slice }: SliceComponentProps<ClientLogosSlice>) => (
   <div className="mt-10 laptop:mt-32">
-    <h1 className="text-4xl text-bold">{slice.primary.title}.</h1>
+    <h1 className="text-4xl text-bold text-info">{slice.primary.title}.</h1>
 
     <AnimateIn>
       <div className="grid grid-cols-3 tablet:grid-cols-4 mt-6 gap-8 items-center">

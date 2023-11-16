@@ -2,10 +2,10 @@ import Socials from "@/components/Socials";
 
 export const Contact = () => (
   <div className="mt-10 laptop:w-3/5">
-    <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
+    <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold text-primary">
       LET&apos;S WORK
     </h1>
-    <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
+    <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold text-secondary">
       TOGETHER
     </h1>
 
@@ -20,7 +20,7 @@ export const Contact = () => (
     <button
       type="button"
       onClick={() => window.open("mailto:mail@benstokoe.co.uk")}
-      className="mb-6 text-3xl tablet:text-5xl text-bold hover:text-primary"
+      className="mb-6 text-3xl tablet:text-5xl text-bold hover:text-accent"
     >
       mail@benstokoe.co.uk
     </button>

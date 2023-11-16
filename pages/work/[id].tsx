@@ -24,7 +24,9 @@ const Project = ({ project }: ProjectProps) => (
 
     <div className="mt-10 laptop:mt-20">
       <div className="mb-5 grid tablet:grid-cols-2 gap-8">
-        <h1 className="text-4xl tablet:text-6xl laptopl:text-8xl text-bold">{project.data.name}</h1>
+        <h1 className="text-4xl tablet:text-6xl laptopl:text-8xl text-bold text-primary">
+          {project.data.name}
+        </h1>
 
         <div className="flex flex-col gap-4">
           <div>

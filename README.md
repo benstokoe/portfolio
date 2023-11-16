@@ -1,1 +1,1 @@
-### Ben A. Stokoe portfolio
+### Ben Stokoe portfolio

@@ -14,14 +14,14 @@ const About = ({ slice }: SliceComponentProps<AboutSlice>) =>
   isFilled.richText(slice.primary.about) ? (
     <AnimateIn>
       <div className="mt-10 laptop:mt-32">
-        <h1 className="text-4xl text-bold">{slice.primary.title}.</h1>
+        <h1 className="text-4xl text-bold text-secondary">{slice.primary.title}.</h1>
 
         <p className="tablet:mt-10 mt-4 text-xl w-full laptop:w-3/5">
           <PrismicRichText field={slice.primary.about} components={richTextComponents} />
         </p>
 
         {slice.primary.showMore && (
-          <Link className="opacity-50 hover:opacity-100" href="/about">
+          <Link className="opacity-50 text-accent hover:opacity-100" href="/about">
             Find out more about me
           </Link>
         )}

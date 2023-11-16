@@ -11,10 +11,7 @@ export const Header = () => (
         <>
           <div className="flex items-center justify-between">
             <Link href="/">
-              <div className="flex items-center gap-0.5">
-                <Image src="/logo.svg" alt="BS logo" width={36} height={36} />
-                <h1 className="font-medium p-2 laptop:p-0">{data.name}.</h1>
-              </div>
+              <h1 className="font-medium p-2 laptop:p-0 text-primary">{data.name}.</h1>
             </Link>
 
             <div className="flex items-center">
@@ -40,20 +37,16 @@ export const Header = () => (
 
     <div className="hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-base-100 py-4">
       <Link href="/">
-        <div className="flex items-center gap-4">
-          <Image src="/logo.svg" alt="BS logo" width={64} height={64} />
-          <h1 className="font-medium text-3xl cursor-pointer">{data.name}.</h1>
-        </div>
+        <h1 className="font-medium text-6xl cursor-pointer text-primary">{data.name}.</h1>
       </Link>
-      <div className="flex gap-6 text-2xl font-bold">
+      <div className="flex gap-6 text-2xl">
         <Link href="/work" className="hover:text-primary">
           Work
         </Link>
-        <Link href="/about" className="hover:text-primary">
+        <Link href="/about" className="hover:text-secondary">
           About
         </Link>
-
-        <Link href="/contact" className="hover:text-primary">
+        <Link href="/contact" className="hover:text-accent">
           Contact
         </Link>
       </div>

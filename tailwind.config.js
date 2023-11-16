@@ -32,7 +32,7 @@ module.exports = {
           secondary: "#f5c2e7",
           accent: "#94e2d5",
           neutral: "#11111b",
-          "base-100": "#1e1e2e",
+          "base-100": "#181825",
           info: "#74c7ec",
           success: "#a6e3a1",
           warning: "#f9e2af",
