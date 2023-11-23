@@ -1,0 +1,166 @@
+[
+  {
+    "uid": {
+      "__TYPE__": "UIDContent",
+      "value": "officer"
+    },
+    "name": {
+      "__TYPE__": "FieldContent",
+      "value": "lake",
+      "type": "Text"
+    },
+    "url": {
+      "__TYPE__": "LinkContent",
+      "value": {
+        "__TYPE__": "ExternalLink",
+        "url": "http://google.com"
+      }
+    },
+    "description": {
+      "__TYPE__": "FieldContent",
+      "value": "barn",
+      "type": "Text"
+    },
+    "mainImage": {
+      "__TYPE__": "ImageContent",
+      "origin": {
+        "id": "main",
+        "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+        "width": 4000,
+        "height": 4000
+      },
+      "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+      "width": 4000,
+      "height": 4000,
+      "edit": {
+        "zoom": 1,
+        "crop": {
+          "x": 0,
+          "y": 0
+        },
+        "background": "transparent"
+      },
+      "thumbnails": {}
+    },
+    "role": {
+      "__TYPE__": "FieldContent",
+      "value": "generally",
+      "type": "Text"
+    },
+    "technologies": {
+      "__TYPE__": "FieldContent",
+      "value": "special",
+      "type": "Text"
+    },
+    "companyDescription": {
+      "__TYPE__": "FieldContent",
+      "value": "gun",
+      "type": "Text"
+    },
+    "slices": {
+      "__TYPE__": "SliceContentType",
+      "value": [
+        {
+          "key": "project_solution$aa7b73ed-7acd-41eb-ac93-8014f1af1465",
+          "name": "project_solution",
+          "widget": {
+            "__TYPE__": "SharedSliceContent",
+            "variation": "default",
+            "primary": {
+              "solution": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Deserunt aute esse minim cillum sunt aliqua. Exercitation velit ea ea laborum quis amet dolore sit."
+                    }
+                  }
+                ]
+              }
+            },
+            "items": [
+              {
+                "__TYPE__": "GroupItemContent",
+                "value": []
+              }
+            ]
+          }
+        },
+        {
+          "key": "project_images$fb2d12e8-60cc-47b2-bc0a-173ae0c0cfda",
+          "name": "project_images",
+          "widget": {
+            "__TYPE__": "SharedSliceContent",
+            "variation": "default",
+            "primary": {
+              "title": {
+                "__TYPE__": "FieldContent",
+                "value": "phrase",
+                "type": "Text"
+              }
+            },
+            "items": [
+              {
+                "__TYPE__": "GroupItemContent",
+                "value": [
+                  [
+                    "image",
+                    {
+                      "__TYPE__": "ImageContent",
+                      "origin": {
+                        "id": "main",
+                        "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+                        "width": 4016,
+                        "height": 6016
+                      },
+                      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+                      "width": 4016,
+                      "height": 6016,
+                      "edit": {
+                        "zoom": 1,
+                        "crop": {
+                          "x": 0,
+                          "y": 0
+                        },
+                        "background": "transparent"
+                      },
+                      "thumbnails": {}
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "key": "project_challenge$02cc9db6-7a81-4ee2-89bb-52c5af864097",
+          "name": "project_challenge",
+          "widget": {
+            "__TYPE__": "SharedSliceContent",
+            "variation": "default",
+            "primary": {
+              "challenge": {
+                "__TYPE__": "StructuredTextContent",
+                "value": [
+                  {
+                    "type": "paragraph",
+                    "content": {
+                      "text": "Duis est reprehenderit incididunt cupidatat aute culpa do laborum laborum excepteur laborum ullamco."
+                    }
+                  }
+                ]
+              }
+            },
+            "items": [
+              {
+                "__TYPE__": "GroupItemContent",
+                "value": []
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

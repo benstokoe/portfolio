@@ -1,7 +1,7 @@
 import { SliceComponentProps } from "@prismicio/react";
 
 import { AnimateIn } from "@/components/AnimateIn";
-import { TechStatsSlice } from "@/types.generated";
+import { TechStatsSlice } from "@/prismicio-types";
 
 const TechStats = ({ slice }: SliceComponentProps<TechStatsSlice>) => (
   <div className="laptop:mt-20 mt-10">

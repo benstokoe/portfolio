@@ -1,7 +1,7 @@
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
-import { ProjectImagesSlice } from "@/types.generated";
+import { ProjectImagesSlice } from "@/prismicio-types";
 
 const WorkImages = ({ slice }: SliceComponentProps<ProjectImagesSlice>) => (
   <div className="mt-8">

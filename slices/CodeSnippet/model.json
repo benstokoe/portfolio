@@ -1,0 +1,42 @@
+{
+  "id": "code_snippet",
+  "type": "SharedSlice",
+  "name": "CodeSnippet",
+  "description": "CodeSnippet",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "code": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Code",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "addedLines": {
+          "type": "Text",
+          "config": {
+            "label": "Added lines",
+            "placeholder": ""
+          }
+        },
+        "removedLines": {
+          "type": "Text",
+          "config": {
+            "label": "Removed Lines",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

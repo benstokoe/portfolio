@@ -1,9 +1,9 @@
 import * as prismic from "@prismicio/client";
+import { FilledContentRelationshipField } from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
 import { CreateClientConfig } from "@prismicio/next";
-import { FilledContentRelationshipField } from "@prismicio/types";
 
-import sm from "./sm.json";
+import sm from "./slicemachine.config.json";
 
 export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
@@ -14,6 +14,10 @@ export const linkResolver = (doc: FilledContentRelationshipField) => {
 
   if (doc.type === "project") {
     return `/work/${doc.uid}`;
+  }
+
+  if (doc.type === "blogPost") {
+    return `/blog/${doc.uid}`;
   }
 
   if (doc.uid) {

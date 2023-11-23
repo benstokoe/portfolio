@@ -24,8 +24,19 @@
       "@/data/*": ["data/*"],
       "@/styles/*": ["styles/*"],
       "@/svg/*": ["svg/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./slicemachine/prismicio.d.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "./prismicio-types.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

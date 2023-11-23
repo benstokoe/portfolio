@@ -1,0 +1,30 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"code": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum sint id esse sunt eiusmod. Enim veniam fugiat consequat esse cillum incididunt commodo in veniam enim exercitation quis nostrud incididunt."
+						}
+					}
+				]
+			},
+			"addedLines": {
+				"__TYPE__": "FieldContent",
+				"value": "spirit",
+				"type": "Text"
+			},
+			"removedLines": {
+				"__TYPE__": "FieldContent",
+				"value": "ever",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

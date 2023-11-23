@@ -1,10 +1,10 @@
-import { isFilled } from "@prismicio/helpers";
+import { isFilled } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 import { ReactNode } from "react";
 
 import { AnimateIn } from "@/components/AnimateIn";
-import { AboutSlice } from "@/types.generated";
+import { AboutSlice } from "@/prismicio-types";
 
 const richTextComponents = {
   paragraph: ({ children }: { children: ReactNode }) => <p className="mb-4">{children}</p>,

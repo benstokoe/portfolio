@@ -1,9 +1,11 @@
+"use client";
+
 import { SliceComponentProps } from "@prismicio/react";
 import { useRef } from "react";
-import { HomeHeroSlice } from "types.generated";
 
 import { stagger } from "@/animations";
 import Socials from "@/components/Socials";
+import { HomeHeroSlice } from "@/prismicio-types";
 import { useIsomorphicLayoutEffect } from "@/utils";
 
 const HomeHero = ({ slice }: SliceComponentProps<HomeHeroSlice>) => {
@@ -16,7 +18,7 @@ const HomeHero = ({ slice }: SliceComponentProps<HomeHeroSlice>) => {
     stagger(
       [textOne.current, textTwo.current, textThree.current, textFour.current],
       { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
-      { y: 0, x: 0, transform: "scale(1)" }
+      { y: 0, x: 0, transform: "scale(1)" },
     );
   }, []);
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import * as prismicH from "@prismicio/helpers";
+import * as prismic from "@prismicio/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import { createClient, linkResolver } from "prismicio";
 
@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Get a list of URLs for any new, updated, or deleted documents
     const documents = await client.getAllByIDs(req.body.documents);
 
-    const urls = documents.map((doc) => prismicH.asLink(doc, linkResolver));
+    const urls = documents.map((doc) => prismic.asLink(doc, linkResolver));
 
     try {
       // Revalidate the URLs for those documents

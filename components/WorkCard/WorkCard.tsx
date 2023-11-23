@@ -1,6 +1,5 @@
-import { isFilled } from "@prismicio/helpers";
+import { ImageField, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
-import { ImageField } from "@prismicio/types";
 
 import { AnimateIn } from "@/components/AnimateIn";
 
@@ -26,7 +25,7 @@ export const WorkCard = ({ image, name, description }: WorkCardProps) => (
           </div>
         </div>
       )}
-      <h1 className="mt-5 text-xl font-medium text-primary">{name}</h1>
+      <h1 className="mt-5 text-xl font-medium">{name}</h1>
       <h2 className="opacity-50">{description}</h2>
     </div>
   </AnimateIn>

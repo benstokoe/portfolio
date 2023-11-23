@@ -1,18 +1,18 @@
 import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsResult, PreviewData } from "next";
 import Head from "next/head";
-import { PageDocument } from "types.generated";
 
 import Layout from "@/components/Layout";
 import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
+import { PageDocument } from "@/prismicio-types";
 import { components } from "@/slices";
 
 type PageProps = {
   page: PageDocument;
 };
 
-const titleColour = {
+const titleColour: Record<string, string> = {
   work: "primary",
   about: "secondary",
   contact: "accent",
@@ -30,7 +30,7 @@ const Page = ({ page }: PageProps) => (
       <div className="laptop:mt-20 mt-10">
         <h1
           className={`text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5 text-${
-            titleColour[page.data.title.toLowerCase()]
+            titleColour[page.data.title.toLowerCase()] || "primary"
           }`}
         >
           {page.data.title}.

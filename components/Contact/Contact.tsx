@@ -17,13 +17,12 @@ export const Contact = () => (
       Feel free to drop me an email and I&apos;ll let you know how I can help you!
     </p>
 
-    <button
-      type="button"
-      onClick={() => window.open("mailto:mail@benstokoe.co.uk")}
+    <a
+      href="mailto:mail@benstokoe.co.uk"
       className="mb-6 text-3xl tablet:text-5xl text-bold hover:text-accent"
     >
       mail@benstokoe.co.uk
-    </button>
+    </a>
 
     <div className="mt-10">
       <Socials />

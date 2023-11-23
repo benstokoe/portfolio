@@ -1,24 +1,14 @@
-import { SliceZone } from "@prismicio/react";
-import { SliceSimulator } from "@prismicio/slice-simulator-react";
+/* eslint-disable import/no-extraneous-dependencies */
 
-import { components } from "@/slices";
+import { SliceZone, SliceZoneProps } from "@prismicio/react";
+import { SliceSimulator } from "@slicemachine/adapter-next/simulator";
 
-import state from "../.slicemachine/libraries-state.json";
+import { components } from "../slices";
 
-const SliceSimulatorPage = () => (
-  <SliceSimulator
-    // eslint-disable-next-line react/no-unstable-nested-components
-    sliceZone={(props) => <SliceZone {...props} components={components} />}
-    state={state}
-  />
+const SliceZoneComponent = (props: SliceZoneProps) => (
+  <SliceZone {...props} components={components} />
 );
 
+const SliceSimulatorPage = () => <SliceSimulator sliceZone={SliceZoneComponent} />;
+
 export default SliceSimulatorPage;
-
-export const getStaticProps = async () => {
-  if (process.env.NODE_ENV === "production") {
-    return { notFound: true };
-  }
-
-  return { props: {} };
-};

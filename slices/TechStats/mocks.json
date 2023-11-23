@@ -1,0 +1,29 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "meat",
+        "type": "Text"
+      },
+      "react": {
+        "__TYPE__": "FieldContent",
+        "value": "compound",
+        "type": "Text"
+      },
+      "next": {
+        "__TYPE__": "FieldContent",
+        "value": "across",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

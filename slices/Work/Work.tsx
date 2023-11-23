@@ -1,7 +1,7 @@
 import { PrismicLink, SliceComponentProps } from "@prismicio/react";
 
 import { WorkCard } from "@/components/WorkCard";
-import { ProjectDocument, ProjectsSlice } from "@/types.generated";
+import { ProjectDocument, ProjectsSlice } from "@/prismicio-types";
 
 const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
   <div className="mt-10 laptop:mt-32">

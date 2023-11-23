@@ -1,13 +1,13 @@
-import { isFilled } from "@prismicio/helpers";
+import { isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceZone } from "@prismicio/react";
 import { GetStaticPropsResult, PreviewData } from "next";
 import Head from "next/head";
-import { ProjectDocument } from "types.generated";
 
 import Layout from "@/components/Layout";
 import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
+import { ProjectDocument } from "@/prismicio-types";
 import { components } from "@/slices";
 
 type ProjectProps = {

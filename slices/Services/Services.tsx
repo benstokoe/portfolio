@@ -1,7 +1,7 @@
 import { SliceComponentProps } from "@prismicio/react";
 
 import { ServiceCard } from "@/components/ServiceCard";
-import { ServiceDocument, ServicesSlice } from "@/types.generated";
+import { ServiceDocument, ServicesSlice } from "@/prismicio-types";
 
 const Services = ({ slice }: SliceComponentProps<ServicesSlice>) => (
   <div className="mt-10 laptop:mt-30">

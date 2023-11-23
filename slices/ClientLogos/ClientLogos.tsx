@@ -2,7 +2,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
 import { AnimateIn } from "@/components/AnimateIn";
-import { ClientLogosSlice } from "@/types.generated";
+import { ClientLogosSlice } from "@/prismicio-types";
 
 const ClientLogos = ({ slice }: SliceComponentProps<ClientLogosSlice>) => (
   <div className="mt-10 laptop:mt-32">

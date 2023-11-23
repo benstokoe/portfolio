@@ -1,4 +1,4 @@
-import { Hind } from "@next/font/google";
+import { Poppins } from "next/font/google";
 import Head from "next/head";
 import { ReactNode } from "react";
 
@@ -6,14 +6,14 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import data from "@/data/portfolio.json";
 
-const hind = Hind({ weight: ["400", "500", "700"], subsets: ["latin"] });
+const hind = Poppins({ weight: ["300", "500", "700"], subsets: ["latin"] });
 
 type LayoutProps = {
   children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => (
-  <div className={`relative text-lg ${hind.className}`}>
+  <div className={`relative text-lg font-light ${hind.className}`}>
     <Head>
       <title>{data.name}</title>
     </Head>

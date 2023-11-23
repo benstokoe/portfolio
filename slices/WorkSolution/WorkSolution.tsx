@@ -1,6 +1,6 @@
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
-import { ProjectSolutionSlice } from "@/types.generated";
+import { ProjectSolutionSlice } from "@/prismicio-types";
 
 const WorkSolution = ({ slice }: SliceComponentProps<ProjectSolutionSlice>) => (
   <div className="mt-8">
