@@ -24,8 +24,6 @@ const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
               name={workData.data.name as string}
               description={workData.data.description as string}
             />
-
-            <p className="mt-4 hover:text-secondary text-accent">View work</p>
           </PrismicLink>
         );
       })}
