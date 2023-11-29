@@ -33,8 +33,9 @@ export default async function Page() {
       {page.data.title && (
         <div className="laptop:mt-20 mt-10">
           <h1
-            className={`text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5 text-${titleColour[page.data.title.toLowerCase()] || "primary"
-              }`}
+            className={`text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5 text-${
+              titleColour[page.data.title.toLowerCase()] || "primary"
+            }`}
           >
             {page.data.title}.
           </h1>
