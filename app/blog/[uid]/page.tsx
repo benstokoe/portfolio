@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BlogTags } from "@/components/BlogTags";
+import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
@@ -44,7 +45,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const page = await client.getByUID("blogPost", params.uid).catch(() => notFound());
 
   return {
-    title: page.data.meta_title,
+    title: `${page.data.postTitle} | Blog | ${data.name}`,
     description: page.data.meta_description,
   };
 }
