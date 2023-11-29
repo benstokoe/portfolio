@@ -19,16 +19,30 @@
           }
         },
         "react": {
-          "type": "Text",
+          "type": "Date",
           "config": {
             "label": "React",
             "placeholder": ""
           }
         },
         "next": {
-          "type": "Text",
+          "type": "Date",
           "config": {
             "label": "Next",
+            "placeholder": ""
+          }
+        },
+        "graphql": {
+          "type": "Date",
+          "config": {
+            "label": "GraphQL",
+            "placeholder": ""
+          }
+        },
+        "css": {
+          "type": "Date",
+          "config": {
+            "label": "CSS",
             "placeholder": ""
           }
         }

@@ -3,6 +3,7 @@
   "label": "Work",
   "repeatable": true,
   "status": true,
+  "format": "custom",
   "json": {
     "Main": {
       "uid": {
@@ -63,6 +64,13 @@
           "placeholder": ""
         }
       },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Date",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -81,6 +89,5 @@
         }
       }
     }
-  },
-  "format": "custom"
+  }
 }

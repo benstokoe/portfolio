@@ -12,14 +12,6 @@ export const linkResolver = (doc: FilledContentRelationshipField) => {
     return "/";
   }
 
-  if (doc.type === "project") {
-    return `/work/${doc.uid}`;
-  }
-
-  if (doc.type === "blogPost") {
-    return `/blog/${doc.uid}`;
-  }
-
   if (doc.uid) {
     return `/${doc.uid}`;
   }
@@ -27,8 +19,20 @@ export const linkResolver = (doc: FilledContentRelationshipField) => {
   return "/";
 };
 
+const routes = [
+  { type: "blogPost", path: "/blog/:uid" },
+  { type: "project", path: "/work/:uid" },
+];
+
 export const createClient = (config: CreateClientConfig = {}) => {
-  const client = prismic.createClient(sm.apiEndpoint, config);
+  const client = prismic.createClient(sm.apiEndpoint, {
+    routes,
+    fetchOptions:
+      process.env.NODE_ENV === "production"
+        ? { next: { tags: ["prismic"] }, cache: "force-cache" }
+        : { next: { revalidate: 5 } },
+    ...config,
+  });
 
   prismicNext.enableAutoPreviews({
     client,

@@ -189,7 +189,38 @@ interface PageDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<PageDocumentDataSlicesSlice>;
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Description field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_description
+   * - **Tab**: SEO & Metadescription
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_image
+   * - **Tab**: SEO & Metadescription
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta title field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_title
+   * - **Tab**: SEO & Metadescription
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
 }
 
 /**
@@ -292,6 +323,17 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   companyDescription: prismic.KeyTextField;
+
+  /**
+   * Date field in *Work*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date: prismic.DateField;
 
   /**
    * Slice Zone field in *Work*
@@ -1028,22 +1070,42 @@ export interface TechStatsSliceDefaultPrimary {
   /**
    * React field in *TechStats → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Date
    * - **Placeholder**: *None*
    * - **API ID Path**: tech_stats.primary.react
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#date
    */
-  react: prismic.KeyTextField;
+  react: prismic.DateField;
 
   /**
    * Next field in *TechStats → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Date
    * - **Placeholder**: *None*
    * - **API ID Path**: tech_stats.primary.next
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#date
    */
-  next: prismic.KeyTextField;
+  next: prismic.DateField;
+
+  /**
+   * GraphQL field in *TechStats → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_stats.primary.graphql
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  graphql: prismic.DateField;
+
+  /**
+   * CSS field in *TechStats → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_stats.primary.css
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  css: prismic.DateField;
 }
 
 /**

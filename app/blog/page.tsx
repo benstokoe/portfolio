@@ -1,6 +1,8 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BlogPostCard } from "@/components/BlogPostCard/BlogPostCard";
+import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
 
 export default async function Page() {
@@ -19,11 +21,18 @@ export default async function Page() {
         Blog.
       </h1>
 
-      <div className="mt-10 grid grid-cols-3 gap-12">
+      <div className="mt-10 grid tablet:grid-cols-2 laptop:grid-cols-3 gap-12">
         {blogPosts.map((blogPost) => (
           <BlogPostCard key={blogPost.data.postTitle} blogPost={blogPost} />
         ))}
       </div>
     </div>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `Blog | ${data.name}`,
+    description: "Blog posts from Ben Stokoe.",
+  };
 }
