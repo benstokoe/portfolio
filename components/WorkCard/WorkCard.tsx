@@ -17,10 +17,10 @@ export const WorkCard = ({ image, name, description, technologies }: WorkCardPro
         <div className="mockup-window bg-base-300 border-base-300">
           <div className="relative overflow-hidden">
             <PrismicNextImage
-              priority
               field={image}
               width="700"
-              height="500"
+              layout="responsive"
+              imgixParams={{ width: 700, height: 500 }}
               className="h-full w-full tablet:hover:scale-110 transition-all ease-out duration-300"
             />
           </div>
@@ -29,7 +29,7 @@ export const WorkCard = ({ image, name, description, technologies }: WorkCardPro
       <h1 className="mt-5 text-xl font-medium">{name}</h1>
       <h2 className="opacity-50">{description}</h2>
 
-      <h4 className="mt-4 text-sm text-info">{technologies}</h4>
+      {technologies && <h4 className="mt-4 text-sm text-info">{technologies}</h4>}
 
       <p className="mt-4 hover:text-secondary text-accent">View work</p>
     </div>

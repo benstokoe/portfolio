@@ -1,4 +1,5 @@
-import { PrismicImage, PrismicLink } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
+import { PrismicLink } from "@prismicio/react";
 import { format } from "date-fns";
 
 import { BlogPostDocument } from "@/prismicio-types";
@@ -12,7 +13,12 @@ type BlogPostCardProps = {
 export const BlogPostCard = ({ blogPost }: BlogPostCardProps) => (
   <AnimateIn>
     <PrismicLink document={blogPost}>
-      <PrismicImage field={blogPost.data.postImage} />
+      <PrismicNextImage
+        field={blogPost.data.postImage}
+        width="320"
+        layout="responsive"
+        imgixParams={{ width: 320 }}
+      />
 
       <p className="font-semibold text-xl mt-4">{blogPost.data.postTitle}</p>
       <p className="mt-2 text-sm">

@@ -9,8 +9,16 @@ export default async function Page() {
   const client = createClient();
 
   const page = await client.getByUID("page", "home", {
-    fetchLinks: ["project.name", "project.mainImage", "project.description", "about.about"],
+    fetchLinks: [
+      "project.name",
+      "project.mainImage",
+      "project.description",
+      "project.technologies",
+      "about.about",
+    ],
   });
+
+  console.log(page);
 
   return <SliceZone slices={page.data.slices} components={components} />;
 }
