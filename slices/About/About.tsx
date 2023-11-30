@@ -1,13 +1,12 @@
 import { isFilled } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { JSXMapSerializer, PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
-import { ReactNode } from "react";
 
 import { AnimateIn } from "@/components/AnimateIn";
 import { AboutSlice } from "@/prismicio-types";
 
-const richTextComponents = {
-  paragraph: ({ children }: { children: ReactNode }) => <p className="mb-4">{children}</p>,
+const components: JSXMapSerializer = {
+  paragraph: ({ children }) => <p className="mb-4">{children}</p>,
 };
 
 const About = ({ slice }: SliceComponentProps<AboutSlice>) =>
@@ -17,7 +16,7 @@ const About = ({ slice }: SliceComponentProps<AboutSlice>) =>
         <h1 className="text-4xl text-bold text-secondary">{slice.primary.title}.</h1>
 
         <p className="tablet:mt-10 mt-4 text-xl w-full laptop:w-3/5">
-          <PrismicRichText field={slice.primary.about} components={richTextComponents} />
+          <PrismicRichText field={slice.primary.about} components={components} />
         </p>
 
         {slice.primary.showMore && (

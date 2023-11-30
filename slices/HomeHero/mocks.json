@@ -1,36 +1,58 @@
 [
-  {
-    "__TYPE__": "SharedSliceContent",
-    "variation": "default",
-    "primary": {
-      "title": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "heading1",
-            "content": {
-              "text": "Double"
-            }
-          }
-        ]
-      },
-      "description": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "paragraph",
-            "content": {
-              "text": "Fugiat mollit magna tempor quis sunt anim irure sunt amet elit labore esse excepteur qui commodo."
-            }
-          }
-        ]
-      }
-    },
-    "items": [
-      {
-        "__TYPE__": "GroupItemContent",
-        "value": []
-      }
-    ]
-  }
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Double"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat mollit magna tempor quis sunt anim irure sunt amet elit labore esse excepteur qui commodo."
+						}
+					}
+				]
+			},
+			"taglineTwo": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mollit nisi ipsum laboris proident duis eu excepteur ipsum do cillum consectetur. Non sit excepteur duis occaecat esse do nisi. Est proident aliqua Lorem adipisicing adipisicing sit ipsum velit minim reprehenderit ad nostrud aute anim fugiat."
+						}
+					}
+				]
+			},
+			"taglineThree": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nulla exercitation ullamco non nisi incididunt dolore do sint magna eu voluptate sint non. Ad adipisicing ex amet enim exercitation deserunt ipsum veniam fugiat dolore esse aliquip dolore esse duis. Esse proident culpa labore officia."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
 ]

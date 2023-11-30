@@ -1,12 +1,16 @@
 "use client";
 
-import { SliceComponentProps } from "@prismicio/react";
+import { JSXMapSerializer, PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { useRef } from "react";
 
 import { stagger } from "@/animations";
 import Socials from "@/components/Socials";
 import { HomeHeroSlice } from "@/prismicio-types";
 import { useIsomorphicLayoutEffect } from "@/utils";
+
+const components: JSXMapSerializer = {
+  em: ({ children }) => <span className="text-accent">{children}</span>,
+};
 
 const HomeHero = ({ slice }: SliceComponentProps<HomeHeroSlice>) => {
   const textOne = useRef(null);
@@ -37,13 +41,13 @@ const HomeHero = ({ slice }: SliceComponentProps<HomeHeroSlice>) => {
           ref={textTwo}
           className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-full laptop:w-4/5"
         >
-          {primary.taglineTwo}
+          <PrismicRichText field={primary.taglineTwo} components={components} />
         </h1>
         <h1
           ref={textThree}
           className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-full"
         >
-          {primary.taglineThree}
+          <PrismicRichText field={primary.taglineThree} components={components} />
         </h1>
         <h1
           ref={textFour}

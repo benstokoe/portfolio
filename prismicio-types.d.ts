@@ -726,22 +726,22 @@ export interface HomeHeroSliceDefaultPrimary {
   /**
    * Tagline Two field in *HomeHero → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: home_hero.primary.taglineTwo
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  taglineTwo: prismic.KeyTextField;
+  taglineTwo: prismic.RichTextField;
 
   /**
    * Tagline Three field in *HomeHero → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: home_hero.primary.taglineThree
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  taglineThree: prismic.KeyTextField;
+  taglineThree: prismic.RichTextField;
 
   /**
    * Tagline Four field in *HomeHero → Primary*
