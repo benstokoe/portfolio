@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import data from "@/data/portfolio.json";
-import { repositoryName } from "@/prismicio";
+import { repositoryName } from "@/slicemachine.config.json";
 
 export const metadata = {
   title: data.name,
