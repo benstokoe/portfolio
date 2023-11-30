@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import data from "@/data/portfolio.json";
-import prismicConfig from "@/slicemachine.config.json";
+import { repositoryName } from "@/prismicio";
 
 export const metadata = {
   title: data.name,
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps) {
 
           <Footer />
 
-          <PrismicPreview repositoryName={prismicConfig.repositoryName} />
+          <PrismicPreview repositoryName={repositoryName} />
         </div>
       </body>
     </html>

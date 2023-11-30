@@ -2,15 +2,17 @@ import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
 import { CreateClientConfig } from "@prismicio/next";
 
-import prismicConfig from "@/slicemachine.config.json";
+import prismicConfig from "./slicemachine.config.json";
 
-const routes: prismic.ClientConfig["routes"] = [
+export const repositoryName = prismic.getRepositoryName(prismicConfig.apiEndpoint);
+
+const routes = [
   { type: "blogPost", path: "/blog/:uid" },
   { type: "project", path: "/work/:uid" },
 ];
 
 export const createClient = (config: CreateClientConfig = {}) => {
-  const client = prismic.createClient(prismicConfig.repositoryName, {
+  const client = prismic.createClient(repositoryName, {
     routes,
     fetchOptions:
       process.env.NODE_ENV === "production"
