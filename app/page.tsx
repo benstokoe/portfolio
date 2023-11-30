@@ -2,7 +2,6 @@ import { SliceZone } from "@prismicio/react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 
@@ -22,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const page = await client.getByUID("page", "home").catch(() => notFound());
 
   return {
-    title: data.name,
+    title: page.data.meta_title,
     description: page.data.meta_description,
   };
 }
