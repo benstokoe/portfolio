@@ -10,7 +10,7 @@ const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
     )}
 
     <div className="mt-5 laptop:mt-10 grid tablet:grid-cols-2 gap-8 gap-y-12">
-      {slice.items.map(({ work }) => {
+      {slice.items.map(({ work }, index) => {
         const workData = work as typeof work & {
           uid: string;
           data: Pick<ProjectDocument["data"], "name" | "mainImage" | "description">;
@@ -23,6 +23,7 @@ const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
               image={workData.data.mainImage}
               name={workData.data.name as string}
               description={workData.data.description as string}
+              imagePriority={index === 0 || index === 1}
             />
           </PrismicLink>
         );

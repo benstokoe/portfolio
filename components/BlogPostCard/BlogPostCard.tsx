@@ -8,9 +8,10 @@ import { AnimateIn } from "../AnimateIn";
 
 type BlogPostCardProps = {
   blogPost: BlogPostDocument;
+  imagePriority?: boolean;
 };
 
-export const BlogPostCard = ({ blogPost }: BlogPostCardProps) => (
+export const BlogPostCard = ({ blogPost, imagePriority }: BlogPostCardProps) => (
   <AnimateIn>
     <PrismicLink document={blogPost}>
       <div className="rounded-xl overflow-hidden">
@@ -18,6 +19,8 @@ export const BlogPostCard = ({ blogPost }: BlogPostCardProps) => (
           field={blogPost.data.postImage}
           width="500"
           layout="responsive"
+          loading={!imagePriority ? "lazy" : undefined}
+          priority={imagePriority}
           imgixParams={{ width: 500 }}
         />
       </div>

@@ -22,8 +22,12 @@ export default async function Page() {
       </h1>
 
       <div className="mt-10 grid tablet:grid-cols-2 gap-12">
-        {blogPosts.map((blogPost) => (
-          <BlogPostCard key={blogPost.data.postTitle} blogPost={blogPost} />
+        {blogPosts.map((blogPost, index) => (
+          <BlogPostCard
+            key={blogPost.data.postTitle}
+            blogPost={blogPost}
+            imagePriority={index === 0 || index === 1}
+          />
         ))}
       </div>
     </div>

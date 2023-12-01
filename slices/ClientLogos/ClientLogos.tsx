@@ -16,6 +16,7 @@ const ClientLogos = ({ slice }: SliceComponentProps<ClientLogosSlice>) => (
               width={120}
               field={logo.clientLogo}
               className="mx-auto max-w-auto max-h-auto max-h-16"
+              loading="lazy"
             />
           </div>
         ))}
