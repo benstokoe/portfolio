@@ -19,10 +19,10 @@ export const WorkCard = ({ image, name, description, technologies }: WorkCardPro
         </div>
       </div>
     )}
-    <h1 className="mt-5 text-xl font-medium">{name}</h1>
-    <h2 className="opacity-50">{description}</h2>
+    <h2 className="mt-5 text-xl font-medium">{name}</h2>
+    <p className="opacity-50">{description}</p>
 
-    {technologies && <h4 className="mt-4 text-sm text-info">{technologies}</h4>}
+    {technologies && <h3 className="mt-4 text-sm text-info">{technologies}</h3>}
 
     <p className="mt-4 hover:text-secondary text-accent">View work</p>
   </AnimateIn>
