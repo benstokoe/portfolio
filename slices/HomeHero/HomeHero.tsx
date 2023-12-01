@@ -30,32 +30,32 @@ const HomeHero = ({ slice }: SliceComponentProps<HomeHeroSlice>) => {
 
   return (
     <div className="laptop:mt-20 mt-10">
-      <div className="mt-5">
-        <h1
+      <h1 className="mt-5">
+        <span
           ref={textOne}
           className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5"
         >
           {primary.taglineOne}
-        </h1>
-        <h1
+        </span>
+        <span
           ref={textTwo}
           className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-full laptop:w-4/5"
         >
           <PrismicRichText field={primary.taglineTwo} components={components} />
-        </h1>
-        <h1
+        </span>
+        <span
           ref={textThree}
           className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-full"
         >
           <PrismicRichText field={primary.taglineThree} components={components} />
-        </h1>
-        <h1
+        </span>
+        <span
           ref={textFour}
           className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-full"
         >
           {primary.taglineFour}
-        </h1>
-      </div>
+        </span>
+      </h1>
 
       <Socials className="mt-6" />
     </div>
