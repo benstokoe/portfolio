@@ -18,8 +18,6 @@ export default async function Page() {
     ],
   });
 
-  console.log(page);
-
   return <SliceZone slices={page.data.slices} components={components} />;
 }
 
