@@ -8,8 +8,8 @@ export const Header = () => (
     <MobileHeader />
 
     <div className="hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-base-100 py-4">
-      <Link href="/">
-        <h1 className="font-medium text-6xl cursor-pointer text-primary">{data.name}.</h1>
+      <Link href="/" className="font-medium text-6xl mb-0 cursor-pointer text-primary">
+        {data.name}.
       </Link>
       <div className="flex gap-6 text-2xl">
         <Link href="/work" className="hover:text-primary">
