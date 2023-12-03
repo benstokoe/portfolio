@@ -13,7 +13,7 @@ const About = ({ slice }: SliceComponentProps<AboutSlice>) =>
   isFilled.richText(slice.primary.about) ? (
     <AnimateIn>
       <div className="mt-10 laptop:mt-32">
-        <h1 className="text-4xl text-bold text-secondary">{slice.primary.title}.</h1>
+        <h2 className="text-4xl text-bold text-secondary">{slice.primary.title}.</h2>
 
         <p className="tablet:mt-10 mt-4 text-xl w-full laptop:w-3/5">
           <PrismicRichText field={slice.primary.about} components={components} />
