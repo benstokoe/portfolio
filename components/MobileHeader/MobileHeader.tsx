@@ -11,8 +11,8 @@ export const MobileHeader = () => (
     {({ open }) => (
       <>
         <div className="flex items-center justify-between">
-          <Link href="/">
-            <h1 className="font-medium p-2 laptop:p-0 text-primary">{data.name}.</h1>
+          <Link href="/" className="font-medium p-2 laptop:p-0 text-primary">
+            {data.name}.
           </Link>
 
           <div className="flex items-center">
