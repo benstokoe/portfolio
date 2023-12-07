@@ -1,9 +1,12 @@
 import { SliceZone } from "@prismicio/react";
+import { kv } from "@vercel/kv";
 import { format } from "date-fns";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 import { BlogTags } from "@/components/BlogTags";
+import { BlogVotes } from "@/components/BlogVotes/BlogVotes";
 import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
@@ -11,6 +14,7 @@ import { components } from "@/slices";
 type Params = { uid: string };
 
 export default async function Page({ params }: { params: Params }) {
+  const votes: number = (await kv.get(params.uid)) ?? 0;
   const client = createClient();
 
   const page = await client.getByUID("blogPost", params.uid).catch(() => notFound());
@@ -24,7 +28,9 @@ export default async function Page({ params }: { params: Params }) {
         {format(new Date(page.data.publishDate as string), "MMM d, yyyy")}
       </p>
 
-      <div className="mt-2">
+      <div className="mt-10 flex gap-2">
+        <BlogVotes uid={params.uid} votes={votes} />
+
         <BlogTags tags={page.data.tags} />
       </div>
 
@@ -32,7 +38,9 @@ export default async function Page({ params }: { params: Params }) {
         <SliceZone slices={page.data.slices} components={components} />
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 flex gap-2">
+        <BlogVotes uid={params.uid} votes={votes} />
+
         <BlogTags tags={page.data.tags} />
       </div>
     </div>
