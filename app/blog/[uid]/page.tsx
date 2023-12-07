@@ -3,7 +3,6 @@ import { kv } from "@vercel/kv";
 import { format } from "date-fns";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
 
 import { BlogTags } from "@/components/BlogTags";
 import { BlogVotes } from "@/components/BlogVotes/BlogVotes";
