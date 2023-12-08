@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 
