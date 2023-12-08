@@ -1,6 +1,8 @@
 import "@/styles/globals.css";
 
 import { PrismicPreview } from "@prismicio/next";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Poppins } from "next/font/google";
 import { ReactNode } from "react";
 
@@ -35,6 +37,8 @@ export default function RootLayout({ children }: LayoutProps) {
           <Footer />
 
           <PrismicPreview repositoryName={repositoryName} />
+          <SpeedInsights />
+          <Analytics />
         </div>
       </body>
     </html>

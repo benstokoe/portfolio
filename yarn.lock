@@ -2030,12 +2030,24 @@
   dependencies:
     crypto-js "^4.2.0"
 
+"@vercel/analytics@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@vercel/analytics/-/analytics-1.1.1.tgz#2a712378a95014a548b4f9d2ae1ea0721433908d"
+  integrity sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==
+  dependencies:
+    server-only "^0.0.1"
+
 "@vercel/kv@1.0.0":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@vercel/kv/-/kv-1.0.0.tgz#9ae4716dd01f097aaab25259217c13a9d18ef922"
   integrity sha512-StouXunmEqUfKE+1joSYfELWEEnI1MhTnzUdarHtv6H18RAm3cf5u5g9ElvA1DJNHcrMT6g5yVAhZcYRbk6lvg==
   dependencies:
     "@upstash/redis" "1.24.3"
+
+"@vercel/speed-insights@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@vercel/speed-insights/-/speed-insights-1.0.0.tgz#53edf7d3a510f159038f0709fc3a79de2cea30c1"
+  integrity sha512-5blmCVGGPn+3BqwBPb1jc3OnzRozNuLgJVr7xH6XjxCTvocs7z/Bml7lo+JzLKUXR1Q35qI/PlEllmNbZmP9Ew==
 
 "@wooorm/starry-night@^1.6.0":
   version "1.7.0"
@@ -6149,6 +6161,11 @@ serve-static@1.15.0, serve-static@^1.15.0:
     escape-html "~1.0.3"
     parseurl "~1.3.3"
     send "0.18.0"
+
+server-only@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/server-only/-/server-only-0.0.1.tgz#0f366bb6afb618c37c9255a314535dc412cd1c9e"
+  integrity sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==
 
 set-function-length@^1.1.1:
   version "1.1.1"
