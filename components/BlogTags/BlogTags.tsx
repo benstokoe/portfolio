@@ -5,11 +5,11 @@ type BlogTagsProps = {
 };
 
 export const BlogTags = ({ tags }: BlogTagsProps) => (
-  <div className="flex gap-2">
+  <>
     {tags.map(({ tag }) => (
-      <div className="rounded-full bg-neutral p-4 text-base hover:bg-primary hover:text-black">
+      <div className="rounded-full bg-neutral p-4 text-base hover:bg-primary hover:text-black whitespace-nowrap">
         {tag}
       </div>
     ))}
-  </div>
+  </>
 );

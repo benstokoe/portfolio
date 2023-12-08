@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { asText, Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";

@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: Params }) {
         {format(new Date(page.data.publishDate as string), "MMM d, yyyy")}
       </p>
 
-      <div className="mt-10 flex gap-2">
+      <div className="mt-10 flex gap-2 flex-wrap">
         <BlogVotes uid={params.uid} votes={votes} />
 
         <BlogTags tags={page.data.tags} />
@@ -37,7 +37,7 @@ export default async function Page({ params }: { params: Params }) {
         <SliceZone slices={page.data.slices} components={components} />
       </div>
 
-      <div className="mt-10 flex gap-2">
+      <div className="mt-10 flex gap-2 flex-wrap">
         <BlogVotes uid={params.uid} votes={votes} />
 
         <BlogTags tags={page.data.tags} />
