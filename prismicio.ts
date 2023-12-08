@@ -12,7 +12,7 @@ const routes = [
 ];
 
 export const createClient = (config: CreateClientConfig = {}) => {
-  const client = prismic.createClient(sm.apiEndpoint, {
+  const client = prismic.createClient(repositoryName, {
     routes,
     fetchOptions:
       process.env.NODE_ENV === "production"
