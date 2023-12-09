@@ -3,6 +3,8 @@ import { PrismicNextImage } from "@prismicio/next";
 
 import { AnimateIn } from "@/components/AnimateIn";
 
+import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
+
 type WorkCardProps = {
   image: ImageField;
   name: string;
@@ -18,9 +20,14 @@ export const WorkCard = ({
   technologies,
   imagePriority,
 }: WorkCardProps) => (
-  <AnimateIn>
+  <AnimateIn className="group">
     {isFilled.image(image) && (
-      <div className="mockup-window bg-base-300 border-base-300 tablet:hover:scale-105 transition-all ease-out duration-300">
+      <div className="rounded-xl overflow-hidden">
+        <div className="flex w-full gap-1.5 rounded-t-xl bg-base-300 p-3">
+          <div className="h-3 w-3 rounded-full bg-red-500" />
+          <div className="h-3 w-3 rounded-full bg-yellow-500" />
+          <div className="h-3 w-3 rounded-full bg-green-500" />
+        </div>
         <div className="relative overflow-hidden">
           <PrismicNextImage
             field={image}
@@ -37,6 +44,8 @@ export const WorkCard = ({
 
     {technologies && <h3 className="mt-4 text-sm text-info">{technologies}</h3>}
 
-    <p className="mt-4 hover:text-secondary text-accent">View work</p>
+    <div className="mt-4">
+      <AnimatedButton>View work</AnimatedButton>
+    </div>
   </AnimateIn>
 );

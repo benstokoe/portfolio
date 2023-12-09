@@ -6,9 +6,10 @@ import { useInView } from "react-intersection-observer";
 
 type AnimateInProps = {
   children: ReactNode;
+  className?: string;
 };
 
-export const AnimateIn = ({ children }: AnimateInProps) => {
+export const AnimateIn = ({ children, className }: AnimateInProps) => {
   const [ref, inView] = useInView({ triggerOnce: true });
 
   return (
@@ -16,6 +17,7 @@ export const AnimateIn = ({ children }: AnimateInProps) => {
       className={clsx("transition-all duration-500", {
         "opacity-100": inView,
         "opacity-0": !inView,
+        [className as string]: className,
       })}
       ref={ref}
     >
