@@ -6,7 +6,7 @@ import Link from "next/link";
 import { MobileHeader } from "@/components/MobileHeader";
 import data from "@/data/portfolio.json";
 
-import NavLink from "../NavLink/NavLink";
+import { NavLink } from "../NavLink";
 
 export const Header = () => (
   <>

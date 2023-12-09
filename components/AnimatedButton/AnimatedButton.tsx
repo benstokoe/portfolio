@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import { ReactNode } from "react";
 
 type AnimatedButtonProps = {

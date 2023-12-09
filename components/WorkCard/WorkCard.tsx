@@ -1,9 +1,8 @@
 import { ImageField, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 
+import { AnimatedButton } from "@/components/AnimatedButton";
 import { AnimateIn } from "@/components/AnimateIn";
-
-import { AnimatedButton } from "../AnimatedButton/AnimatedButton";
 
 type WorkCardProps = {
   image: ImageField;

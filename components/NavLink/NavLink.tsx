@@ -8,7 +8,7 @@ type NavLinkProps = {
   hoverColour?: string;
 };
 
-const NavLink = ({ children, href, hoverColour }: NavLinkProps) => (
+export const NavLink = ({ children, href, hoverColour }: NavLinkProps) => (
   <Link href={href} className="overflow-hidden h-8">
     <motion.div whileHover={{ y: -32 }}>
       <span className="flex items-center">
@@ -20,5 +20,3 @@ const NavLink = ({ children, href, hoverColour }: NavLinkProps) => (
     </motion.div>
   </Link>
 );
-
-export default NavLink;
