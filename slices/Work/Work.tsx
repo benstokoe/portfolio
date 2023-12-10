@@ -1,67 +1,47 @@
+import { Query } from "@prismicio/client";
 import { PrismicLink, SliceComponentProps } from "@prismicio/react";
-import { notFound } from "next/navigation";
 
 import { WorkCard } from "@/components/WorkCard";
-import { createClient } from "@/prismicio";
 import { ProjectDocument, ProjectsSlice } from "@/prismicio-types";
 
-const WorkAsync = async ({ slice }: SliceComponentProps<ProjectsSlice>) => {
-  const client = createClient();
+const Work = (
+  { slice, context }: SliceComponentProps<
+    ProjectsSlice,
+    { work: Query<ProjectDocument> }
+  >,
+) => (
+  <div className="mt-10 laptop:mt-32">
+    {slice.primary.title && (
+      <h2 className="text-4xl text-bold text-primary">
+        {slice.primary.title}.
+      </h2>
+    )}
 
-  const work = await client
-    .getByType("project", {
-      orderings: {
-        field: "my.project.date",
-        direction: "desc",
-      },
-      fetchLinks: [
-        "project.name",
-        "project.mainImage",
-        "project.description",
-        "project.technologies",
-      ],
-      pageSize: 4,
-    })
-    .catch(() => notFound());
+    <div className="mt-5 laptop:mt-10 grid tablet:grid-cols-2 gap-8 gap-y-12">
+      {context?.work?.results.map((data, index) => {
+        const workData = data as typeof data & {
+          uid: string;
+          data: Pick<
+            ProjectDocument["data"],
+            "name" | "mainImage" | "description"
+          >;
+        };
 
-  return (
-    <div className="mt-10 laptop:mt-32">
-      {slice.primary.title && (
-        <h2 className="text-4xl text-bold text-primary">
-          {slice.primary.title}.
-        </h2>
-      )}
-
-      <div className="mt-5 laptop:mt-10 grid tablet:grid-cols-2 gap-8 gap-y-12">
-        {work.results.map((data, index) => {
-          const workData = data as typeof data & {
-            uid: string;
-            data: Pick<
-              ProjectDocument["data"],
-              "name" | "mainImage" | "description"
-            >;
-          };
-
-          return (
-            <PrismicLink document={data} key={workData.uid}>
-              <WorkCard
-                key={workData.uid}
-                image={workData.data.mainImage}
-                name={workData.data.name as string}
-                description={workData.data.description as string}
-                technologies={workData.data.technologies as string}
-                imagePriority={index === 0 || index === 1}
-              />
-            </PrismicLink>
-          );
-        })}
-      </div>
+        return (
+          <PrismicLink document={data} key={workData.uid}>
+            <WorkCard
+              key={workData.uid}
+              image={workData.data.mainImage}
+              name={workData.data.name as string}
+              description={workData.data.description as string}
+              technologies={workData.data.technologies as string}
+              imagePriority={index === 0 || index === 1}
+            />
+          </PrismicLink>
+        );
+      })}
     </div>
-  );
-};
-
-const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
-  <WorkAsync slice={slice} />
+  </div>
 );
 
 export default Work;

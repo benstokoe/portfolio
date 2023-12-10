@@ -18,7 +18,29 @@ export default async function Page() {
     ],
   });
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  const work = await client
+    .getByType("project", {
+      orderings: {
+        field: "my.project.date",
+        direction: "desc",
+      },
+      fetchLinks: [
+        "project.name",
+        "project.mainImage",
+        "project.description",
+        "project.technologies",
+      ],
+      pageSize: 4,
+    })
+    .catch(() => notFound());
+
+  return (
+    <SliceZone
+      slices={page.data.slices}
+      components={components}
+      context={{ work }}
+    />
+  );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
