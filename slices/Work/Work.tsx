@@ -11,7 +11,7 @@ const WorkAsync = async ({ slice }: SliceComponentProps<ProjectsSlice>) => {
   const work = await client
     .getByType("project", {
       orderings: {
-        field: "document.data.date",
+        field: "my.project.date",
         direction: "desc",
       },
       fetchLinks: [
