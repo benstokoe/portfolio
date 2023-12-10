@@ -22,12 +22,12 @@ const About = ({ slice }: SliceComponentProps<AboutSlice>) =>
             {slice.primary.title}.
           </h2>
 
-          <p className="tablet:mt-10 mt-4 text-xl w-full laptop:w-3/5">
+          <div className="tablet:mt-10 mt-4 text-xl w-full laptop:w-3/5">
             <PrismicRichText
               field={slice.primary.about}
               components={components}
             />
-          </p>
+          </div>
 
           {slice.primary.showMore && (
             <Link className="text-accent" href="/about">

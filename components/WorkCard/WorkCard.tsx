@@ -27,7 +27,7 @@ export const WorkCard = ({
           <div className="h-3 w-3 rounded-full bg-yellow-500" />
           <div className="h-3 w-3 rounded-full bg-green-500" />
         </div>
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden w-auto">
           <PrismicNextImage
             field={image}
             width="700"
