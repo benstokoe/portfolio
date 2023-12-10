@@ -5,16 +5,21 @@ import { WorkCard } from "@/components/WorkCard";
 import { createClient } from "@/prismicio";
 import { ProjectDocument, ProjectsSlice } from "@/prismicio-types";
 
-const Work = async ({ slice }: SliceComponentProps<ProjectsSlice>) => {
+const WorkAsync = async ({ slice }: SliceComponentProps<ProjectsSlice>) => {
   const client = createClient();
 
   const work = await client
     .getByType("project", {
       orderings: {
-        field: "document.date",
+        field: "document.data.date",
         direction: "desc",
       },
-      fetchLinks: ["project.name", "project.mainImage", "project.description"],
+      fetchLinks: [
+        "project.name",
+        "project.mainImage",
+        "project.description",
+        "project.technologies",
+      ],
       pageSize: 4,
     })
     .catch(() => notFound());
@@ -44,6 +49,7 @@ const Work = async ({ slice }: SliceComponentProps<ProjectsSlice>) => {
                 image={workData.data.mainImage}
                 name={workData.data.name as string}
                 description={workData.data.description as string}
+                technologies={workData.data.technologies as string}
                 imagePriority={index === 0 || index === 1}
               />
             </PrismicLink>
@@ -53,5 +59,9 @@ const Work = async ({ slice }: SliceComponentProps<ProjectsSlice>) => {
     </div>
   );
 };
+
+const Work = ({ slice }: SliceComponentProps<ProjectsSlice>) => (
+  <WorkAsync slice={slice} />
+);
 
 export default Work;
