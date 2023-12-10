@@ -21,7 +21,7 @@ export default async function Page() {
         Blog.
       </h1>
 
-      <div className="mt-10 grid tablet:grid-cols-2 gap-12">
+      <div className="mt-10 laptop:mt-20 grid tablet:grid-cols-2 gap-12">
         {blogPosts.map((blogPost, index) => (
           <BlogPostCard
             key={blogPost.data.postTitle}

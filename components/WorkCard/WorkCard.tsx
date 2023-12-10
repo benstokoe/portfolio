@@ -19,7 +19,7 @@ export const WorkCard = ({
   technologies,
   imagePriority,
 }: WorkCardProps) => (
-  <AnimateIn className="group">
+  <div className="group">
     {isFilled.image(image) && (
       <div className="rounded-xl overflow-hidden">
         <div className="flex w-full gap-1.5 rounded-t-xl bg-base-300 p-3">
@@ -42,9 +42,5 @@ export const WorkCard = ({
     <p className="opacity-50">{description}</p>
 
     {technologies && <h3 className="mt-4 text-sm text-info">{technologies}</h3>}
-
-    <div className="mt-4">
-      <AnimatedButton>View work</AnimatedButton>
-    </div>
-  </AnimateIn>
+  </div>
 );

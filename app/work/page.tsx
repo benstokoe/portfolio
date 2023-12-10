@@ -42,27 +42,28 @@ export default async function Page() {
         </div>
       )}
 
-      <div className="mt-10 laptop:mt-20">
-        <div className="mt-5 laptop:mt-10 grid tablet:grid-cols-2 gap-8 gap-y-12">
-          {work.results.map((doc) => {
-            const workData = doc.data as typeof doc.data & {
-              uid: string;
-              data: Pick<ProjectDocument["data"], "name" | "mainImage" | "description">;
-            };
+      <div className="mt-10 laptop:mt-20 grid tablet:grid-cols-2 gap-8 gap-y-12">
+        {work.results.map((doc) => {
+          const workData = doc.data as typeof doc.data & {
+            uid: string;
+            data: Pick<
+              ProjectDocument["data"],
+              "name" | "mainImage" | "description"
+            >;
+          };
 
-            return (
-              <PrismicNextLink document={doc} key={workData.uid}>
-                <WorkCard
-                  key={workData.uid}
-                  image={workData.mainImage}
-                  name={workData.name as string}
-                  description={workData.description as string}
-                  technologies={workData.technologies as string}
-                />
-              </PrismicNextLink>
-            );
-          })}
-        </div>
+          return (
+            <PrismicNextLink document={doc} key={workData.uid}>
+              <WorkCard
+                key={workData.uid}
+                image={workData.mainImage}
+                name={workData.name as string}
+                description={workData.description as string}
+                technologies={workData.technologies as string}
+              />
+            </PrismicNextLink>
+          );
+        })}
       </div>
     </div>
   );

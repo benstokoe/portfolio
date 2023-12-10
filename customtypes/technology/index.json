@@ -1,18 +1,31 @@
 {
   "id": "technology",
   "label": "Technology",
+  "format": "custom",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
       "name": {
         "type": "Text",
         "config": {
           "label": "Name",
           "placeholder": ""
         }
+      },
+      "priority": {
+        "type": "Number",
+        "config": {
+          "label": "Priority",
+          "placeholder": ""
+        }
       }
     }
-  },
-  "format": "custom"
+  }
 }

@@ -1,16 +1,17 @@
 import { Query } from "@prismicio/client";
 import { PrismicLink, SliceComponentProps } from "@prismicio/react";
+import Link from "next/link";
 
 import { WorkCard } from "@/components/WorkCard";
 import { ProjectDocument, ProjectsSlice } from "@/prismicio-types";
 
-const Work = (
-  { slice, context }: SliceComponentProps<
-    ProjectsSlice,
-    { work: Query<ProjectDocument> }
-  >,
-) => (
-  <div className="mt-10 laptop:mt-32">
+export type WorkProps = SliceComponentProps<
+  ProjectsSlice,
+  { work: Query<ProjectDocument> }
+>;
+
+const Work = ({ slice, context }: WorkProps) => (
+  <section className="mt-10 laptop:mt-32">
     {slice.primary.title && (
       <h2 className="text-4xl text-bold text-primary">
         {slice.primary.title}.
@@ -41,7 +42,16 @@ const Work = (
         );
       })}
     </div>
-  </div>
+
+    <div className="mt-10 flex flex-1 justify-center">
+      <Link
+        href="/work"
+        className="btn hover:bg-primary hover:text-neutral w-full laptop:w-1/2"
+      >
+        View all
+      </Link>
+    </div>
+  </section>
 );
 
 export default Work;

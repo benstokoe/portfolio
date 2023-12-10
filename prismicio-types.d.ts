@@ -337,6 +337,17 @@ interface ProjectDocumentData {
   date: prismic.DateField;
 
   /**
+   * Technologies field in *Work*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.technologies2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  technologies2: prismic.ContentRelationshipField<"technology">;
+
+  /**
    * Slice Zone field in *Work*
    *
    * - **Field Type**: Slice Zone
@@ -419,6 +430,17 @@ interface TechnologyDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   name: prismic.KeyTextField;
+
+  /**
+   * Priority field in *Technology*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: technology.priority
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  priority: prismic.NumberField;
 }
 
 /**
@@ -430,7 +452,7 @@ interface TechnologyDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type TechnologyDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+export type TechnologyDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
   Simplify<TechnologyDocumentData>,
   "technology",
   Lang

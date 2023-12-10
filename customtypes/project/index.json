@@ -71,6 +71,14 @@
           "placeholder": ""
         }
       },
+      "technologies2": {
+        "type": "Link",
+        "config": {
+          "label": "Technologies",
+          "select": "document",
+          "customtypes": ["technology"]
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

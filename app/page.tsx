@@ -34,11 +34,18 @@ export default async function Page() {
     })
     .catch(() => notFound());
 
+  const blogPosts = await client
+    .getByType("blogPost", {
+      orderings: { field: "my.blogPost.publishDate", direction: "desc" },
+      pageSize: 2,
+    })
+    .catch(() => notFound());
+
   return (
     <SliceZone
       slices={page.data.slices}
       components={components}
-      context={{ work }}
+      context={{ work, blogPosts }}
     />
   );
 }
