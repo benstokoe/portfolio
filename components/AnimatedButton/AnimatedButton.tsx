@@ -13,9 +13,9 @@ export const AnimatedButton = (
     type={type}
     className={`
       relative z-0 flex items-center gap-2 overflow-hidden
-      whitespace-nowrap rounded-lg border-[1px] 
-      border-neutral-700 px-4 py-1.5 font-medium
-      text-white transition-all duration-300
+      whitespace-nowrap rounded-lg border 
+      border-neutral-700 px-4 py-1.5 font-base
+      text-base transition-all duration-300
 
       before:absolute before:inset-0
       before:-z-10 before:translate-y-[200%]

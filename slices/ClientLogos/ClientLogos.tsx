@@ -9,9 +9,12 @@ const ClientLogos = ({ slice }: SliceComponentProps<ClientLogosSlice>) => (
     <h2 className="text-4xl text-bold text-info">{slice.primary.title}.</h2>
 
     <AnimateIn>
-      <div className="grid grid-cols-3 tablet:grid-cols-4 mt-6 gap-8 items-center">
+      <div className="grid grid-cols-3 tablet:grid-cols-4 mt-10 gap-8 items-center">
         {slice.items.map((logo) => (
-          <div className="w-full grayscale hover:grayscale-0" key={logo.clientLogo.url}>
+          <div
+            className="w-full grayscale hover:grayscale-0"
+            key={logo.clientLogo.url}
+          >
             <PrismicNextImage
               width={120}
               field={logo.clientLogo}

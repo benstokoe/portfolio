@@ -1,15 +1,16 @@
 {
-  "id": "projects",
+  "id": "blog_posts",
   "type": "SharedSlice",
-  "name": "Work",
-  "description": "Projects",
+  "name": "BlogPosts",
+  "description": "BlogPosts",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
-      "version": "sktwi1xtmkfgx8626",
-      "description": "Projects",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
       "primary": {
         "title": {
           "type": "Text",
@@ -21,15 +22,14 @@
         "showMore": {
           "type": "Boolean",
           "config": {
-            "label": "Show More",
+            "label": "Show more",
             "default_value": false,
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
         }
       },
-      "items": {},
-      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+      "items": {}
     }
   ]
 }

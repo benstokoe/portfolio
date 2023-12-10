@@ -157,6 +157,7 @@ export type BlogPostDocument<Lang extends string = string> = prismic.PrismicDocu
 >;
 
 type PageDocumentDataSlicesSlice =
+  | BlogPostsSlice
   | HomeHeroSlice
   | ProjectsSlice
   | AboutSlice
@@ -547,6 +548,59 @@ type BlogHeroSliceVariation = BlogHeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type BlogHeroSlice = prismic.SharedSlice<"blog_hero", BlogHeroSliceVariation>;
+
+/**
+ * Primary content in *BlogPosts → Primary*
+ */
+export interface BlogPostsSliceDefaultPrimary {
+  /**
+   * Title field in *BlogPosts → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_posts.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Show more field in *BlogPosts → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: blog_posts.primary.showMore
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  showMore: prismic.BooleanField;
+}
+
+/**
+ * Default variation for BlogPosts Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogPostsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogPostsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogPosts*
+ */
+type BlogPostsSliceVariation = BlogPostsSliceDefault;
+
+/**
+ * BlogPosts Shared Slice
+ *
+ * - **API ID**: `blog_posts`
+ * - **Description**: BlogPosts
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogPostsSlice = prismic.SharedSlice<"blog_posts", BlogPostsSliceVariation>;
 
 /**
  * Primary content in *ClientLogos → Primary*
@@ -955,21 +1009,6 @@ export interface ProjectsSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *Work → Items*
- */
-export interface ProjectsSliceDefaultItem {
-  /**
-   * Work field in *Work → Items*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: projects.items[].work
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  work: prismic.ContentRelationshipField<"project">;
-}
-
-/**
  * Default variation for Work Slice
  *
  * - **API ID**: `default`
@@ -979,7 +1018,7 @@ export interface ProjectsSliceDefaultItem {
 export type ProjectsSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<ProjectsSliceDefaultPrimary>,
-  Simplify<ProjectsSliceDefaultItem>
+  never
 >;
 
 /**
@@ -1222,6 +1261,10 @@ declare module "@prismicio/client" {
       BlogHeroSliceDefaultPrimary,
       BlogHeroSliceVariation,
       BlogHeroSliceDefault,
+      BlogPostsSlice,
+      BlogPostsSliceDefaultPrimary,
+      BlogPostsSliceVariation,
+      BlogPostsSliceDefault,
       ClientLogosSlice,
       ClientLogosSliceDefaultPrimary,
       ClientLogosSliceDefaultItem,
@@ -1254,7 +1297,6 @@ declare module "@prismicio/client" {
       ProjectSolutionSliceDefault,
       ProjectsSlice,
       ProjectsSliceDefaultPrimary,
-      ProjectsSliceDefaultItem,
       ProjectsSliceVariation,
       ProjectsSliceDefault,
       ServicesSlice,

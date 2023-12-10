@@ -5,7 +5,7 @@
 		"primary": {
 			"title": {
 				"__TYPE__": "FieldContent",
-				"value": "took",
+				"value": "respect",
 				"type": "Text"
 			},
 			"showMore": {
@@ -13,11 +13,6 @@
 				"value": false
 			}
 		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
+		"items": []
 	}
 ]
