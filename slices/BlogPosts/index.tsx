@@ -3,6 +3,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import Link from "next/link";
 
 import { BlogPostCard } from "@/components/BlogPostCard";
+import { HomeSliceLayout } from "@/components/HomeSliceLayout";
 import { BlogPostDocument } from "@/prismicio-types";
 
 export type BlogPostsProps = SliceComponentProps<
@@ -11,26 +12,14 @@ export type BlogPostsProps = SliceComponentProps<
 >;
 
 const BlogPosts = ({ slice, context }: BlogPostsProps) => (
-  <section
-    className="mt-10 laptop:mt-32"
-    data-slice-type={slice.slice_type}
-    data-slice-variation={slice.variation}
-  >
-    {slice.primary.title && (
-      <h2 className="text-4xl text-bold text-primary">
-        {slice.primary.title}.
-      </h2>
-    )}
-
-    <div className="mt-10 grid tablet:grid-cols-2 gap-12">
-      {context?.blogPosts?.results.map((blogPost, index) => (
-        <BlogPostCard
-          key={blogPost.data.postTitle}
-          blogPost={blogPost}
-          imagePriority={index === 0 || index === 1}
-        />
-      ))}
-    </div>
+  <HomeSliceLayout title={slice.primary.title} titleColour="text-accent">
+    {context?.blogPosts?.results.map((blogPost, index) => (
+      <BlogPostCard
+        key={blogPost.data.postTitle}
+        blogPost={blogPost}
+        imagePriority={index === 0 || index === 1}
+      />
+    ))}
 
     <div className="mt-10 flex flex-1 justify-center">
       <Link
@@ -40,7 +29,7 @@ const BlogPosts = ({ slice, context }: BlogPostsProps) => (
         View all
       </Link>
     </div>
-  </section>
+  </HomeSliceLayout>
 );
 
 export default BlogPosts;

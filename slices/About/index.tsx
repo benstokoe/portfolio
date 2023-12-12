@@ -6,7 +6,7 @@ import {
 } from "@prismicio/react";
 import Link from "next/link";
 
-import { AnimateIn } from "@/components/AnimateIn";
+import { HomeSliceLayout } from "@/components/HomeSliceLayout";
 import { AboutSlice } from "@/prismicio-types";
 
 const components: JSXMapSerializer = {
@@ -16,26 +16,20 @@ const components: JSXMapSerializer = {
 const About = ({ slice }: SliceComponentProps<AboutSlice>) =>
   isFilled.richText(slice.primary.about)
     ? (
-      <AnimateIn>
-        <div className="mt-10 laptop:mt-32">
-          <h2 className="text-4xl text-bold text-secondary">
-            {slice.primary.title}.
-          </h2>
+      <HomeSliceLayout
+        title={slice.primary.title as string}
+        titleColour="text-secondary"
+        className="laptop:w-3/5"
+      >
+        <PrismicRichText
+          field={slice.primary.about}
+          components={components}
+        />
 
-          <div className="mt-10 text-xl w-full laptop:w-3/5">
-            <PrismicRichText
-              field={slice.primary.about}
-              components={components}
-            />
-          </div>
-
-          {slice.primary.showMore && (
-            <Link className="text-accent" href="/about">
-              Find out more about me
-            </Link>
-          )}
-        </div>
-      </AnimateIn>
+        <Link className="text-accent" href="/about">
+          Find out more about me
+        </Link>
+      </HomeSliceLayout>
     )
     : null;
 

@@ -15,9 +15,7 @@ export default async function Page() {
 
   return (
     <div className="laptop:mt-20 mt-10">
-      <h1
-        className={`text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5 text-${"accent"}`}
-      >
+      <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5 text-accent">
         Blog.
       </h1>
 

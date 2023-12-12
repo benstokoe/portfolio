@@ -1,9 +1,6 @@
 import { ImageField, isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 
-import { AnimatedButton } from "@/components/AnimatedButton";
-import { AnimateIn } from "@/components/AnimateIn";
-
 type WorkCardProps = {
   image: ImageField;
   name: string;
@@ -19,7 +16,7 @@ export const WorkCard = ({
   technologies,
   imagePriority,
 }: WorkCardProps) => (
-  <div className="group">
+  <>
     {isFilled.image(image) && (
       <div className="rounded-xl overflow-hidden">
         <div className="flex w-full gap-1.5 rounded-t-xl bg-base-300 p-3">
@@ -30,8 +27,8 @@ export const WorkCard = ({
         <div className="relative overflow-hidden w-auto">
           <PrismicNextImage
             field={image}
-            width="700"
-            imgixParams={{ width: 700, height: 500 }}
+            width="720"
+            imgixParams={{ width: 720, height: 500 }}
             loading={!imagePriority ? "lazy" : undefined}
             priority={imagePriority}
           />
@@ -42,5 +39,5 @@ export const WorkCard = ({
     <p className="opacity-50">{description}</p>
 
     {technologies && <h3 className="mt-4 text-sm text-info">{technologies}</h3>}
-  </div>
+  </>
 );
