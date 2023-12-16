@@ -29,7 +29,7 @@ export const WorkCard = ({
             field={image}
             width="720"
             layout="responsive"
-            imgixParams={{ width: 720, height: 500 }}
+            imgixParams={{ width: 720, height: 500, fm: "avif" }}
             loading={!imagePriority ? "lazy" : undefined}
             priority={imagePriority}
           />

@@ -31,7 +31,12 @@ const components: JSXMapSerializer = {
   ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   image: ({ node, key }) => (
-    <PrismicNextImage key={key} field={node as any} className="w-full" />
+    <PrismicNextImage
+      key={key}
+      field={node as any}
+      className="w-full"
+      imgixParams={{ fm: "avif" }}
+    />
   ),
   preformatted: ({ node, key }) => (
     <Code

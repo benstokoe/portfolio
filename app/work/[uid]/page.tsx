@@ -13,7 +13,9 @@ type Params = { params: { uid: string } };
 export default async function Page({ params }: Params) {
   const client = createClient();
 
-  const project = await client.getByUID("project", params.uid).catch(() => notFound());
+  const project = await client.getByUID("project", params.uid).catch(() =>
+    notFound()
+  );
 
   return (
     <>
@@ -45,7 +47,12 @@ export default async function Page({ params }: Params) {
 
         {isFilled.image(project.data.mainImage) && (
           <div className="mt-8 laptop:mt-24 relative rounded-lg overflow-hidden transition-all ease-out duration-300">
-            <PrismicNextImage priority field={project.data.mainImage} className="h-full w-full" />
+            <PrismicNextImage
+              priority
+              field={project.data.mainImage}
+              className="h-full w-full"
+              imgixParams={{ fm: "avif" }}
+            />
           </div>
         )}
 
@@ -66,7 +73,9 @@ export default async function Page({ params }: Params) {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const client = createClient();
 
-  const page = await client.getByUID("project", params.uid).catch(() => notFound());
+  const page = await client.getByUID("project", params.uid).catch(() =>
+    notFound()
+  );
 
   return {
     title: `${page.data.name} | ${data.name}`,

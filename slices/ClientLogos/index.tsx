@@ -24,8 +24,10 @@ const ClientLogos = ({ slice, context }: ClientLogosProps) => (
         <PrismicNextImage
           width={120}
           field={logo.data.logo}
+          layout="responsive"
           className="mx-auto max-w-auto max-h-auto max-h-16"
           loading="lazy"
+          imgixParams={{ fm: "avif", width: 120 }}
         />
       </PrismicNextLink>
     ))}
