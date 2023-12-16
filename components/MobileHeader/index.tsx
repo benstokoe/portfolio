@@ -12,7 +12,7 @@ const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex items-center justify-between my-2 tablet:hidden">
+    <div className="container flex items-center justify-between my-2 tablet:hidden">
       <Link
         href="/"
         className="font-medium text-3xl text-primary"

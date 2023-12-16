@@ -26,17 +26,17 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body className={`relative text-lg font-light ${poppins.className}`}>
-        <div className="container mx-auto mb-10">
-          <Header />
+        <Header />
 
+        <div className="container mx-auto mb-10">
           {children}
 
           <Footer />
-
-          <PrismicPreview repositoryName={repositoryName} />
-          <SpeedInsights />
-          <Analytics />
         </div>
+
+        <PrismicPreview repositoryName={repositoryName} />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

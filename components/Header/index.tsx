@@ -12,7 +12,7 @@ export const Header = () => (
   <>
     <MobileHeader />
 
-    <div className="hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-base-100 py-4">
+    <div className="container hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-base-100 py-4">
       <Link
         href="/"
         className="font-medium text-6xl mb-0 cursor-pointer text-primary"

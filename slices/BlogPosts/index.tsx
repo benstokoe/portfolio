@@ -27,11 +27,10 @@ const BlogPosts = ({ slice, context }: BlogPostsProps) => (
       </div>
     }
   >
-    {context?.blogPosts?.results.map((blogPost, index) => (
+    {context?.blogPosts?.results.map((blogPost) => (
       <BlogPostCard
         key={blogPost.data.postTitle}
         blogPost={blogPost}
-        imagePriority={index === 0 || index === 1}
       />
     ))}
   </HomeSliceLayout>
