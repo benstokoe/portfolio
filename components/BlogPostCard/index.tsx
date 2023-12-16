@@ -22,7 +22,7 @@ export const BlogPostCard = (
         layout="responsive"
         loading={!imagePriority ? "lazy" : undefined}
         priority={imagePriority}
-        imgixParams={{ width: 500 }}
+        imgixParams={{ width: 500, fm: "avif" }}
         className="aspect-2"
         style={{ objectFit: "cover" }}
       />
