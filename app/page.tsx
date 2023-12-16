@@ -1,3 +1,4 @@
+import { filter } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -8,15 +9,7 @@ import { components } from "@/slices";
 export default async function Page() {
   const client = createClient();
 
-  const page = await client.getByUID("page", "home", {
-    fetchLinks: [
-      "project.name",
-      "project.mainImage",
-      "project.description",
-      "project.technologies",
-      "about.about",
-    ],
-  });
+  const page = await client.getByUID("page", "home");
 
   const work = await client
     .getByType("project", {
@@ -24,15 +17,26 @@ export default async function Page() {
         field: "my.project.date",
         direction: "desc",
       },
-      fetchLinks: [
+      pageSize: 4,
+      fetch: [
         "project.name",
-        "project.mainImage",
         "project.description",
+        "project.mainImage",
         "project.technologies",
       ],
-      pageSize: 4,
     })
     .catch(() => notFound());
+
+  const logos = await client.getAllByType("project", {
+    orderings: {
+      field: "my.project.date",
+      direction: "desc",
+    },
+    fetch: ["project.logo"],
+    filters: [
+      filter.has("my.project.logo"),
+    ],
+  });
 
   const blogPosts = await client
     .getByType("blogPost", {
@@ -45,7 +49,7 @@ export default async function Page() {
     <SliceZone
       slices={page.data.slices}
       components={components}
-      context={{ work, blogPosts }}
+      context={{ work, blogPosts, logos }}
     />
   );
 }

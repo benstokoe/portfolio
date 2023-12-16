@@ -16,6 +16,16 @@ const Work = ({ slice, context }: WorkProps) => (
     title={slice.primary.title as string}
     titleColour="text-primary"
     className="grid tablet:grid-cols-2 gap-8 gap-y-12"
+    link={
+      <div className="mt-10 flex flex-1 justify-center">
+        <Link
+          href="/work"
+          className="btn hover:bg-primary hover:text-neutral w-full laptop:w-1/2"
+        >
+          View all
+        </Link>
+      </div>
+    }
   >
     {context?.work?.results.map((data, index) => {
       const workData = data as typeof data & {
@@ -39,15 +49,6 @@ const Work = ({ slice, context }: WorkProps) => (
         </PrismicLink>
       );
     })}
-
-    <div className="mt-10 flex flex-1 justify-center">
-      <Link
-        href="/work"
-        className="btn hover:bg-primary hover:text-neutral w-full laptop:w-1/2"
-      >
-        View all
-      </Link>
-    </div>
   </HomeSliceLayout>
 );
 

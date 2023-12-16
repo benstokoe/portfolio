@@ -7,7 +7,10 @@ type BlogTagsProps = {
 export const BlogTags = ({ tags }: BlogTagsProps) => (
   <>
     {tags.map(({ tag }) => (
-      <div className="rounded-full bg-neutral p-4 text-base hover:bg-primary hover:text-black whitespace-nowrap">
+      <div
+        className="rounded-full bg-neutral p-4 text-base hover:bg-primary hover:text-black whitespace-nowrap"
+        key={tag}
+      >
         {tag}
       </div>
     ))}

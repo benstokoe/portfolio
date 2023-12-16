@@ -1,8 +1,12 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 
-import { MobileHeader } from "@/components/MobileHeader";
 import { NavLink } from "@/components/NavLink";
 import data from "@/data/portfolio.json";
+
+const MobileHeader = dynamic(() => import("@/components/MobileHeader"), {
+  ssr: false,
+});
 
 export const Header = () => (
   <>

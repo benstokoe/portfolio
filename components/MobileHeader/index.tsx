@@ -8,7 +8,7 @@ import { FiMenu } from "react-icons/fi";
 import { MobileNav } from "@/components/MobileNav";
 import data from "@/data/portfolio.json";
 
-export const MobileHeader = () => {
+const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -33,3 +33,5 @@ export const MobileHeader = () => {
     </div>
   );
 };
+
+export default MobileHeader;

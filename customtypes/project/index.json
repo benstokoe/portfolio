@@ -79,21 +79,19 @@
           "customtypes": ["technology"]
         }
       },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "project_solution": {
-              "type": "SharedSlice"
-            },
-            "project_images": {
-              "type": "SharedSlice"
-            },
-            "project_challenge": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     }

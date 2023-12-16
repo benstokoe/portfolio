@@ -1,3 +1,5 @@
+"use server";
+
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import {
@@ -6,8 +8,9 @@ import {
   PrismicRichText,
   SliceComponentProps,
 } from "@prismicio/react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Code } from "bright";
+
+import theme from "../CodeSnippet/theme";
 
 export type ContentProps = SliceComponentProps<Content.ContentSlice>;
 
@@ -27,11 +30,19 @@ const components: JSXMapSerializer = {
     </p>
   ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  image: ({ node, key }) => <PrismicNextImage key={key} field={node as any} className="w-full" />,
+  image: ({ node, key }) => (
+    <PrismicNextImage key={key} field={node as any} className="w-full" />
+  ),
   preformatted: ({ node, key }) => (
-    <SyntaxHighlighter showLineNumbers style={dracula} wrapLines key={key}>
+    <Code
+      lang="javascript"
+      lineNumbers
+      theme={theme}
+      key={key}
+      title="router.js"
+    >
       {node.text}
-    </SyntaxHighlighter>
+    </Code>
   ),
   strong: ({ children, key }) => (
     <strong key={key} className="font-semibold">
@@ -44,7 +55,11 @@ const components: JSXMapSerializer = {
   list: ({ children, key }) => <ul key={key}>{children}</ul>,
   oList: ({ children, key }) => <ol key={key}>{children}</ol>,
   hyperlink: ({ node, children, key }) => (
-    <PrismicLink key={key} field={node.data} className="underline hover:text-primary">
+    <PrismicLink
+      key={key}
+      field={node.data}
+      className="underline hover:text-primary"
+    >
       {children}
     </PrismicLink>
   ),

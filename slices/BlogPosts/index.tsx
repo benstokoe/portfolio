@@ -12,7 +12,21 @@ export type BlogPostsProps = SliceComponentProps<
 >;
 
 const BlogPosts = ({ slice, context }: BlogPostsProps) => (
-  <HomeSliceLayout title={slice.primary.title} titleColour="text-accent">
+  <HomeSliceLayout
+    title={slice.primary.title as string}
+    titleColour="text-accent"
+    className="grid tablet:grid-cols-2 gap-8 gap-y-12"
+    link={
+      <div className="mt-10 flex flex-1 justify-center">
+        <Link
+          href="/blog"
+          className="btn hover:bg-primary hover:text-neutral w-full laptop:w-1/2"
+        >
+          View all
+        </Link>
+      </div>
+    }
+  >
     {context?.blogPosts?.results.map((blogPost, index) => (
       <BlogPostCard
         key={blogPost.data.postTitle}
@@ -20,15 +34,6 @@ const BlogPosts = ({ slice, context }: BlogPostsProps) => (
         imagePriority={index === 0 || index === 1}
       />
     ))}
-
-    <div className="mt-10 flex flex-1 justify-center">
-      <Link
-        href="/blog"
-        className="btn hover:bg-primary hover:text-neutral w-full laptop:w-1/2"
-      >
-        View all
-      </Link>
-    </div>
   </HomeSliceLayout>
 );
 

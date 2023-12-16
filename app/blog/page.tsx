@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { BlogPostCard } from "@/components/BlogPostCard/BlogPostCard";
+import { BlogPostCard } from "@/components/BlogPostCard";
 import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
 
@@ -22,7 +22,7 @@ export default async function Page() {
       <div className="mt-10 laptop:mt-20 grid tablet:grid-cols-2 gap-12">
         {blogPosts.map((blogPost, index) => (
           <BlogPostCard
-            key={blogPost.data.postTitle}
+            key={blogPost.id}
             blogPost={blogPost}
             imagePriority={index === 0 || index === 1}
           />

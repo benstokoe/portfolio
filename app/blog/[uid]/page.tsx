@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BlogTags } from "@/components/BlogTags";
-import { BlogVotes } from "@/components/BlogVotes/BlogVotes";
+import { BlogVotes } from "@/components/BlogVotes";
 import data from "@/data/portfolio.json";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
@@ -16,7 +16,9 @@ export default async function Page({ params }: { params: Params }) {
   const votes: number = (await kv.get(params.uid)) ?? 0;
   const client = createClient();
 
-  const page = await client.getByUID("blogPost", params.uid).catch(() => notFound());
+  const page = await client.getByUID("blogPost", params.uid).catch(() =>
+    notFound()
+  );
 
   return (
     <div className="mt-10 laptop:mt-20">
@@ -46,10 +48,14 @@ export default async function Page({ params }: { params: Params }) {
   );
 }
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: Params },
+): Promise<Metadata> {
   const client = createClient();
 
-  const page = await client.getByUID("blogPost", params.uid).catch(() => notFound());
+  const page = await client.getByUID("blogPost", params.uid).catch(() =>
+    notFound()
+  );
 
   return {
     title: `${page.data.postTitle} | Blog | ${data.name}`,

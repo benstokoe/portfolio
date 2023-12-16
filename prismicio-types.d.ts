@@ -239,10 +239,7 @@ export type PageDocument<Lang extends string = string> = prismic.PrismicDocument
   Lang
 >;
 
-type ProjectDocumentDataSlicesSlice =
-  | ProjectSolutionSlice
-  | ProjectImagesSlice
-  | ProjectChallengeSlice;
+type ProjectDocumentDataSlicesSlice = never;
 
 /**
  * Content for Work documents
@@ -346,6 +343,17 @@ interface ProjectDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   technologies2: prismic.ContentRelationshipField<"technology">;
+
+  /**
+   * Logo field in *Work*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Work*
@@ -652,6 +660,16 @@ export interface ClientLogosSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   clientLogo: prismic.ImageField<never>;
+
+  /**
+   * Link field in *ClientLogos → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: client_logos.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
 }
 
 /**
@@ -858,153 +876,6 @@ type HomeHeroSliceVariation = HomeHeroSliceDefault;
 export type HomeHeroSlice = prismic.SharedSlice<"home_hero", HomeHeroSliceVariation>;
 
 /**
- * Primary content in *WorkChallenge → Primary*
- */
-export interface ProjectChallengeSliceDefaultPrimary {
-  /**
-   * Challenge field in *WorkChallenge → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project_challenge.primary.challenge
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  challenge: prismic.RichTextField;
-}
-
-/**
- * Default variation for WorkChallenge Slice
- *
- * - **API ID**: `default`
- * - **Description**: ProjectChallenge
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectChallengeSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ProjectChallengeSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *WorkChallenge*
- */
-type ProjectChallengeSliceVariation = ProjectChallengeSliceDefault;
-
-/**
- * WorkChallenge Shared Slice
- *
- * - **API ID**: `project_challenge`
- * - **Description**: ProjectChallenge
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectChallengeSlice = prismic.SharedSlice<
-  "project_challenge",
-  ProjectChallengeSliceVariation
->;
-
-/**
- * Primary content in *WorkImages → Primary*
- */
-export interface ProjectImagesSliceDefaultPrimary {
-  /**
-   * Title field in *WorkImages → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project_images.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *WorkImages → Items*
- */
-export interface ProjectImagesSliceDefaultItem {
-  /**
-   * Image field in *WorkImages → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project_images.items[].image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Default variation for WorkImages Slice
- *
- * - **API ID**: `default`
- * - **Description**: ProjectImages
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectImagesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ProjectImagesSliceDefaultPrimary>,
-  Simplify<ProjectImagesSliceDefaultItem>
->;
-
-/**
- * Slice variation for *WorkImages*
- */
-type ProjectImagesSliceVariation = ProjectImagesSliceDefault;
-
-/**
- * WorkImages Shared Slice
- *
- * - **API ID**: `project_images`
- * - **Description**: ProjectImages
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectImagesSlice = prismic.SharedSlice<"project_images", ProjectImagesSliceVariation>;
-
-/**
- * Primary content in *WorkSolution → Primary*
- */
-export interface ProjectSolutionSliceDefaultPrimary {
-  /**
-   * Solution field in *WorkSolution → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project_solution.primary.solution
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  solution: prismic.RichTextField;
-}
-
-/**
- * Default variation for WorkSolution Slice
- *
- * - **API ID**: `default`
- * - **Description**: ProjectSolution
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSolutionSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ProjectSolutionSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *WorkSolution*
- */
-type ProjectSolutionSliceVariation = ProjectSolutionSliceDefault;
-
-/**
- * WorkSolution Shared Slice
- *
- * - **API ID**: `project_solution`
- * - **Description**: ProjectSolution
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ProjectSolutionSlice = prismic.SharedSlice<
-  "project_solution",
-  ProjectSolutionSliceVariation
->;
-
-/**
  * Primary content in *Work → Primary*
  */
 export interface ProjectsSliceDefaultPrimary {
@@ -1056,63 +927,6 @@ type ProjectsSliceVariation = ProjectsSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type ProjectsSlice = prismic.SharedSlice<"projects", ProjectsSliceVariation>;
-
-/**
- * Primary content in *Services → Primary*
- */
-export interface ServicesSliceDefaultPrimary {
-  /**
-   * Title field in *Services → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-}
-
-/**
- * Primary content in *Services → Items*
- */
-export interface ServicesSliceDefaultItem {
-  /**
-   * Services field in *Services → Items*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: services.items[].services
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  services: prismic.ContentRelationshipField<"service">;
-}
-
-/**
- * Default variation for Services Slice
- *
- * - **API ID**: `default`
- * - **Description**: Services
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ServicesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ServicesSliceDefaultPrimary>,
-  Simplify<ServicesSliceDefaultItem>
->;
-
-/**
- * Slice variation for *Services*
- */
-type ServicesSliceVariation = ServicesSliceDefault;
-
-/**
- * Services Shared Slice
- *
- * - **API ID**: `services`
- * - **Description**: Services
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ServicesSlice = prismic.SharedSlice<"services", ServicesSliceVariation>;
 
 /**
  * Primary content in *TechStats → Primary*
@@ -1196,58 +1010,6 @@ type TechStatsSliceVariation = TechStatsSliceDefault;
  */
 export type TechStatsSlice = prismic.SharedSlice<"tech_stats", TechStatsSliceVariation>;
 
-/**
- * Primary content in *WorkStats → Primary*
- */
-export interface WorkStatsSliceDefaultPrimary {
-  /**
-   * React field in *WorkStats → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_stats.primary.react
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  react: prismic.KeyTextField;
-
-  /**
-   * Next field in *WorkStats → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_stats.primary.next
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  next: prismic.KeyTextField;
-}
-
-/**
- * Default variation for WorkStats Slice
- *
- * - **API ID**: `default`
- * - **Description**: WorkStats
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type WorkStatsSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<WorkStatsSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *WorkStats*
- */
-type WorkStatsSliceVariation = WorkStatsSliceDefault;
-
-/**
- * WorkStats Shared Slice
- *
- * - **API ID**: `work_stats`
- * - **Description**: WorkStats
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type WorkStatsSlice = prismic.SharedSlice<"work_stats", WorkStatsSliceVariation>;
-
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1304,36 +1066,14 @@ declare module "@prismicio/client" {
       HomeHeroSliceDefaultPrimary,
       HomeHeroSliceVariation,
       HomeHeroSliceDefault,
-      ProjectChallengeSlice,
-      ProjectChallengeSliceDefaultPrimary,
-      ProjectChallengeSliceVariation,
-      ProjectChallengeSliceDefault,
-      ProjectImagesSlice,
-      ProjectImagesSliceDefaultPrimary,
-      ProjectImagesSliceDefaultItem,
-      ProjectImagesSliceVariation,
-      ProjectImagesSliceDefault,
-      ProjectSolutionSlice,
-      ProjectSolutionSliceDefaultPrimary,
-      ProjectSolutionSliceVariation,
-      ProjectSolutionSliceDefault,
       ProjectsSlice,
       ProjectsSliceDefaultPrimary,
       ProjectsSliceVariation,
       ProjectsSliceDefault,
-      ServicesSlice,
-      ServicesSliceDefaultPrimary,
-      ServicesSliceDefaultItem,
-      ServicesSliceVariation,
-      ServicesSliceDefault,
       TechStatsSlice,
       TechStatsSliceDefaultPrimary,
       TechStatsSliceVariation,
       TechStatsSliceDefault,
-      WorkStatsSlice,
-      WorkStatsSliceDefaultPrimary,
-      WorkStatsSliceVariation,
-      WorkStatsSliceDefault,
     };
   }
 }
