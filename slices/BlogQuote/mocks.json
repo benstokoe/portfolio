@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"quote": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat tempor esse amet laborum est non duis ut laboris tempor culpa magna laboris occaecat."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

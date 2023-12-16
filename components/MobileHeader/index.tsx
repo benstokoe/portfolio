@@ -25,6 +25,7 @@ const MobileHeader = () => {
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(true)}
         className="text-xl bg-neutral text-white p-4 rounded-full"
+        aria-label="Open Menu"
       >
         <FiMenu />
       </motion.button>

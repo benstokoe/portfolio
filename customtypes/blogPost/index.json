@@ -39,6 +39,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "blog_quote": {
+              "type": "SharedSlice"
+            },
             "code_snippet": {
               "type": "SharedSlice"
             },

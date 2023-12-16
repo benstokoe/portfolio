@@ -35,7 +35,7 @@ export type AboutDocument<Lang extends string = string> = prismic.PrismicDocumen
   Lang
 >;
 
-type BlogPostDocumentDataSlicesSlice = CodeSnippetSlice | ContentSlice;
+type BlogPostDocumentDataSlicesSlice = BlogQuoteSlice | CodeSnippetSlice | ContentSlice;
 
 /**
  * Item in *Blog Post → Tags*
@@ -633,6 +633,48 @@ type BlogPostsSliceVariation = BlogPostsSliceDefault;
 export type BlogPostsSlice = prismic.SharedSlice<"blog_posts", BlogPostsSliceVariation>;
 
 /**
+ * Primary content in *BlogQuote → Primary*
+ */
+export interface BlogQuoteSliceDefaultPrimary {
+  /**
+   * Quote field in *BlogQuote → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_quote.primary.quote
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  quote: prismic.RichTextField;
+}
+
+/**
+ * Default variation for BlogQuote Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogQuoteSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogQuoteSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BlogQuote*
+ */
+type BlogQuoteSliceVariation = BlogQuoteSliceDefault;
+
+/**
+ * BlogQuote Shared Slice
+ *
+ * - **API ID**: `blog_quote`
+ * - **Description**: BlogQuote
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogQuoteSlice = prismic.SharedSlice<"blog_quote", BlogQuoteSliceVariation>;
+
+/**
  * Primary content in *ClientLogos → Primary*
  */
 export interface ClientLogosSliceDefaultPrimary {
@@ -1049,6 +1091,10 @@ declare module "@prismicio/client" {
       BlogPostsSliceDefaultPrimary,
       BlogPostsSliceVariation,
       BlogPostsSliceDefault,
+      BlogQuoteSlice,
+      BlogQuoteSliceDefaultPrimary,
+      BlogQuoteSliceVariation,
+      BlogQuoteSliceDefault,
       ClientLogosSlice,
       ClientLogosSliceDefaultPrimary,
       ClientLogosSliceDefaultItem,

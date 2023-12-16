@@ -39,7 +39,7 @@ export const WorkCard = ({
     <h2 className="mt-5 text-xl font-medium group-hover:text-primary transition-colours">
       {name}
     </h2>
-    <p className="opacity-50 mt-2 group-hover:opacity-100">
+    <p className="mt-2">
       {description}
     </p>
 
