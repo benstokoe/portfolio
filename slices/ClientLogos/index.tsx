@@ -25,7 +25,7 @@ const ClientLogos = ({ slice, context }: ClientLogosProps) => (
           width={120}
           field={logo.data.logo}
           layout="responsive"
-          className="mx-auto max-w-auto max-h-auto max-h-16"
+          className="mx-auto max-w-auto max-h-auto max-h-16 object-contain"
           loading="lazy"
           imgixParams={{ fm: "avif", width: 120 }}
         />
