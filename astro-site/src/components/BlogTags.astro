@@ -1,0 +1,14 @@
+---
+interface Props {
+  tags: string[];
+}
+const { tags } = Astro.props;
+---
+
+{
+  tags.map((tag) => (
+    <div class="rounded-full bg-neutral p-4 text-base hover:bg-primary hover:text-black whitespace-nowrap">
+      {tag}
+    </div>
+  ))
+}

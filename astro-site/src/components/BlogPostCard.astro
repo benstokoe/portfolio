@@ -1,0 +1,35 @@
+---
+import { format } from "date-fns";
+import type { CollectionEntry } from "astro:content";
+
+import BlogTags from "@/components/BlogTags.astro";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  imagePriority?: boolean;
+}
+const { post, imagePriority } = Astro.props;
+const { postTitle, postImage, publishDate, tags } = post.data;
+---
+
+<a href={`/blog/${post.slug}`}>
+  <div class="rounded-xl overflow-hidden hover:scale-105 transition-transform">
+    {
+      postImage && (
+        <img
+          src={postImage}
+          alt={postTitle}
+          width="500"
+          loading={imagePriority ? "eager" : "lazy"}
+          class="aspect-2 w-full object-cover"
+        />
+      )
+    }
+  </div>
+
+  <p class="font-semibold text-xl mt-4">{postTitle}</p>
+  <p class="mt-2 text-sm">{format(publishDate, "MMM d, yyyy")}</p>
+  <div class="mt-4 flex gap-2 flex-wrap">
+    <BlogTags tags={tags} />
+  </div>
+</a>

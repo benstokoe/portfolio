@@ -1,0 +1,24 @@
+---
+import { getEntry } from "astro:content";
+
+import site from "@/data/site.json";
+import Layout from "@/layouts/Layout.astro";
+
+const page = await getEntry("pages", "about");
+const home = await getEntry("home", "home");
+const paragraphs = home.data.about.split("\n\n").filter(Boolean);
+---
+
+<Layout title={`${page.data.title} | ${site.name}`} description={page.data.metaDescription}>
+  <div class="mt-10 laptop:mt-20">
+    <div class="laptop:mt-20 mt-10">
+      <h1 class="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5 text-secondary">
+        {page.data.title}.
+      </h1>
+    </div>
+
+    <div class="mt-10 laptop:mt-20 laptop:w-3/5">
+      {paragraphs.map((paragraph) => <p class="mb-4">{paragraph}</p>)}
+    </div>
+  </div>
+</Layout>

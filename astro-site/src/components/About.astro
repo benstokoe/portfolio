@@ -1,0 +1,16 @@
+---
+import HomeSliceLayout from "@/components/HomeSliceLayout.astro";
+
+interface Props {
+  title: string;
+  about: string;
+}
+const { title, about } = Astro.props;
+const paragraphs = about.split("\n\n").filter(Boolean);
+---
+
+<HomeSliceLayout title={title} titleColour="text-secondary" class="laptop:w-3/5">
+  {paragraphs.map((paragraph) => <p class="mb-4">{paragraph}</p>)}
+
+  <a class="text-accent" href="/about">Find out more about me</a>
+</HomeSliceLayout>

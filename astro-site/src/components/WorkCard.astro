@@ -1,0 +1,40 @@
+---
+interface Props {
+  image?: string;
+  name: string;
+  description: string;
+  technologies?: string;
+  imagePriority?: boolean;
+}
+const { image, name, description, technologies, imagePriority } = Astro.props;
+---
+
+<div class="group">
+  {
+    image && (
+      <div class="rounded-xl overflow-hidden group-hover:scale-105 transition-transform">
+        <div class="flex w-full gap-1.5 rounded-t-xl bg-base-300 p-3">
+          <div class="h-3 w-3 rounded-full bg-red-500" />
+          <div class="h-3 w-3 rounded-full bg-yellow-500" />
+          <div class="h-3 w-3 rounded-full bg-green-500" />
+        </div>
+        <div class="relative overflow-hidden w-auto">
+          <img
+            src={image}
+            alt={name}
+            width="720"
+            height="500"
+            loading={imagePriority ? "eager" : "lazy"}
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    )
+  }
+  <h2 class="mt-5 text-xl font-medium group-hover:text-primary transition-colours">
+    {name}
+  </h2>
+  <p class="mt-2">{description}</p>
+
+  {technologies && <h3 class="mt-4 text-sm text-info group-hover:text-accent">{technologies}</h3>}
+</div>

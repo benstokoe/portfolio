@@ -1,0 +1,44 @@
+---
+import { format } from "date-fns";
+import { getCollection } from "astro:content";
+
+import BlogTags from "@/components/BlogTags.astro";
+import BlogVotes from "@/components/BlogVotes";
+import site from "@/data/site.json";
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { uid: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { postTitle, publishDate, metaDescription, tags } = post.data;
+---
+
+<Layout title={`${postTitle} | Blog | ${site.name}`} description={metaDescription}>
+  <div class="mt-10 laptop:mt-20">
+    <h1 class="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5">
+      {postTitle}
+    </h1>
+    <p class="text-accent text-base mt-2">{format(publishDate, "MMM d, yyyy")}</p>
+
+    <div class="mt-10 flex gap-2 flex-wrap items-center">
+      <BlogVotes uid={post.slug} client:load />
+      <BlogTags tags={tags} />
+    </div>
+
+    <div class="mt-10 laptop:mt-20 prose prose-invert max-w-none">
+      <Content />
+    </div>
+
+    <div class="mt-10 flex gap-2 flex-wrap items-center">
+      <BlogVotes uid={post.slug} client:load />
+      <BlogTags tags={tags} />
+    </div>
+  </div>
+</Layout>

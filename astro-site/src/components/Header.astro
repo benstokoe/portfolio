@@ -1,0 +1,19 @@
+---
+import MobileHeader from "@/components/MobileHeader";
+import NavLink from "@/components/NavLink.astro";
+import site from "@/data/site.json";
+---
+
+<MobileHeader client:load />
+
+<div class="container hidden flex-row items-center justify-between sticky text-white top-0 z-10 tablet:flex bg-base-100 py-4">
+  <a href="/" class="font-medium text-6xl mb-0 cursor-pointer text-primary">
+    {site.name}
+  </a>
+  <div class="flex gap-6 text-2xl">
+    <NavLink href="/work" class="hover:text-primary">Work</NavLink>
+    <NavLink href="/blog" class="hover:text-accent">Blog</NavLink>
+    <NavLink href="/about" class="hover:text-secondary">About</NavLink>
+    <NavLink href="/contact" class="hover:text-info">Contact</NavLink>
+  </div>
+</div>

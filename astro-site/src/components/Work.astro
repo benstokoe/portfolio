@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import HomeSliceLayout from "@/components/HomeSliceLayout.astro";
+import WorkCard from "@/components/WorkCard.astro";
+
+interface Props {
+  title: string;
+  work: CollectionEntry<"work">[];
+}
+const { title, work } = Astro.props;
+---
+
+<HomeSliceLayout title={title} titleColour="text-primary" class="grid tablet:grid-cols-2 gap-8 gap-y-12">
+  {
+    work.map((project, index) => (
+      <a href={`/work/${project.slug}`}>
+        <WorkCard
+          image={project.data.mainImage}
+          name={project.data.name}
+          description={project.data.description}
+          technologies={project.data.technologies}
+          imagePriority={index === 0 || index === 1}
+        />
+      </a>
+    ))
+  }
+
+  <div slot="link" class="mt-10 flex flex-1 justify-center">
+    <a href="/work" class="btn hover:bg-primary hover:text-neutral w-full laptop:w-1/2">
+      View all
+    </a>
+  </div>
+</HomeSliceLayout>

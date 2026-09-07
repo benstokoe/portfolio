@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+
+import BlogPostCard from "@/components/BlogPostCard.astro";
+import site from "@/data/site.json";
+import Layout from "@/layouts/Layout.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
+---
+
+<Layout title={`Blog | ${site.name}`} description="Blog posts from Ben Stokoe.">
+  <div class="laptop:mt-20 mt-10">
+    <h1 class="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold w-4/5 mob:w-full laptop:w-4/5 text-accent">
+      Blog.
+    </h1>
+
+    <div class="mt-10 laptop:mt-20 grid tablet:grid-cols-2 gap-12">
+      {posts.map((post, index) => <BlogPostCard post={post} imagePriority={index === 0 || index === 1} />)}
+    </div>
+  </div>
+</Layout>
