@@ -1,0 +1,75 @@
+---
+import { getCollection } from "astro:content";
+
+import site from "@/data/site.json";
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const work = await getCollection("work");
+  return work.map((project) => ({
+    params: { uid: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const { name, description, role, technologies, companyDescription, mainImage } = project.data;
+---
+
+<Layout title={`${name} | ${site.name}`} description={description}>
+  <div class="mt-10 laptop:mt-20">
+    <div class="mb-5 grid tablet:grid-cols-2 gap-8">
+      <h1 class="text-4xl tablet:text-6xl laptopl:text-8xl text-bold text-primary">{name}</h1>
+
+      <div class="flex flex-col gap-4">
+        <div>
+          <h2 class="opacity-50 mb-2">DESCRIPTION</h2>
+          <p>{description}</p>
+        </div>
+
+        <div class="gap-4 grid tablet:grid-cols-2">
+          {
+            role && (
+              <div>
+                <h2 class="opacity-50 mb-2">ROLE</h2>
+                <p>{role}</p>
+              </div>
+            )
+          }
+
+          {
+            technologies && (
+              <div>
+                <h2 class="opacity-50 mb-2">TECHNOLOGIES</h2>
+                <p>{technologies}</p>
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+
+    {
+      mainImage && (
+        <div class="mt-8 laptop:mt-24 relative rounded-lg overflow-hidden transition-all ease-out duration-300">
+          <img src={mainImage} alt={name} class="h-full w-full" />
+        </div>
+      )
+    }
+
+    {
+      companyDescription && (
+        <div class="mt-8 text-2xl">
+          <p>{companyDescription}</p>
+        </div>
+      )
+    }
+  </div>
+
+  <div class="border-b border-white w-full h-0.5 mt-8" />
+
+  <div class="mt-8 laptop:mt-20 prose prose-invert max-w-none">
+    <Content />
+  </div>
+</Layout>

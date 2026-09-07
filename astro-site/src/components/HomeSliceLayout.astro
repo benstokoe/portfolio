@@ -1,0 +1,20 @@
+---
+import { cn } from "@/utils/cn";
+
+interface Props {
+  title?: string;
+  titleColour: string;
+  class?: string;
+}
+const { title, titleColour, class: className } = Astro.props;
+---
+
+<div class="mt-10 laptop:mt-32">
+  {title && <h2 class={cn("text-4xl text-bold", titleColour)}>{title}</h2>}
+
+  <div class={cn("mt-10 w-full", className)}>
+    <slot />
+  </div>
+
+  <slot name="link" />
+</div>

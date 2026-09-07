@@ -1,0 +1,18 @@
+---
+import site from "@/data/site.json";
+
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<div class:list={[className, "flex flex-wrap mob:flex-nowrap gap-4"]}>
+  {
+    site.socials.map((social) => (
+      <a class="text-xl hover:text-primary" href={social.link}>
+        {social.title}
+      </a>
+    ))
+  }
+</div>

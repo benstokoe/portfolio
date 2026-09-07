@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import BlogPostCard from "@/components/BlogPostCard.astro";
+import HomeSliceLayout from "@/components/HomeSliceLayout.astro";
+
+interface Props {
+  title: string;
+  posts: CollectionEntry<"blog">[];
+}
+const { title, posts } = Astro.props;
+---
+
+<HomeSliceLayout title={title} titleColour="text-accent" class="grid tablet:grid-cols-2 gap-8 gap-y-12">
+  {posts.map((post) => <BlogPostCard post={post} />)}
+
+  <div slot="link" class="mt-10 flex flex-1 justify-center">
+    <a href="/blog" class="btn hover:bg-primary hover:text-neutral w-full laptop:w-1/2">
+      View all
+    </a>
+  </div>
+</HomeSliceLayout>

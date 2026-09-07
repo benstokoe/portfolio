@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import HomeSliceLayout from "@/components/HomeSliceLayout.astro";
+
+interface Props {
+  title: string;
+  logos: CollectionEntry<"work">[];
+}
+const { title, logos } = Astro.props;
+---
+
+<HomeSliceLayout title={title} titleColour="text-info" class="grid grid-cols-3 tablet:grid-cols-4 gap-8 items-center">
+  {
+    logos.map((project) => (
+      <a href={`/work/${project.slug}`} class="w-full grayscale hover:grayscale-0">
+        <img
+          src={project.data.logo}
+          alt={project.data.name}
+          width="120"
+          loading="lazy"
+          class="mx-auto max-w-auto max-h-16 object-contain"
+        />
+      </a>
+    ))
+  }
+</HomeSliceLayout>

@@ -1,0 +1,20 @@
+{
+  "metaTitle": "Ben Stokoe",
+  "metaDescription": "Ben Stokoe is a front-end focused software engineer building fast, accessible web products.",
+  "heroTaglineOne": "I build",
+  "heroTaglineTwo": "products that feel *effortless*",
+  "heroTaglineThree": "for teams who care about craft as much as speed.",
+  "heroTaglineFour": "Let's build something.",
+  "aboutTitle": "About me",
+  "about": "I'm a software engineer based in the UK, specialising in React, Next.js and TypeScript. I care about performance, accessibility, and building things that are a joy to use.\n\nOutside of client work I like tinkering with side projects, writing about what I learn, and keeping up with the front-end ecosystem.",
+  "workTitle": "Work",
+  "blogTitle": "Blog",
+  "clientLogosTitle": "Clients",
+  "techStatsTitle": "Experience",
+  "techStats": {
+    "react": "2013-09-04",
+    "next": "2016-06-04",
+    "graphql": "2015-08-21",
+    "css": "2013-05-16"
+  }
+}
